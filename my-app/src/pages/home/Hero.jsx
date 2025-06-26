@@ -21,46 +21,45 @@ import DottedBackground from '../../components/DottedBackground'
 
 const Hero = () => {
     return (
-        <DottedBackground className="h-screen bg-gray-900">
+        <DottedBackground className="h-full pb-8 bg-gray-900">
             <div className="pt-20 flex h-full">
-                
-                {/* Left Column */}
-                <div className="w-1/2 h-full flex items-center justify-center px-8">
-                    <div className="max-w-xl text-left space-y-6">
-                        <p className="text-pink-400 font-medium">Restricted by opportunities?</p>
 
-                        <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-                            Get the tech career<br />you deserve. <span className="text-white/90">Faster.</span>
-                        </h1>
+                <div className="w-1/2 h-full flex items-center justify-center px-12">
+            <div className="max-w-3xl text-left space-y-8">
+                <p className="text-pink-400 font-medium text-lg">Restricted by opportunities?</p>
 
-                        {/* Points Section */}
-                        <div className="space-y-4 pt-6">
-                            {/* Point 1 */}
-                            <div className="flex items-start gap-4 bg-white/5 px-4 py-3 rounded-lg">
-                                <CheckCircle className="text-pink-400 w-5 h-5 mt-1" />
-                                <p className="text-white text-sm">
-                                    <span className="font-semibold">128% average hike</span> via our placement cell
-                                </p>
-                            </div>
+                <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+                    Get the tech career<br />you deserve. <span className="text-white/90">Faster.</span>
+                </h1>
 
-                            {/* Point 2 */}
-                            <div className="flex items-start gap-4 bg-white/5 px-4 py-3 rounded-lg">
-                                <CheckCircle className="text-pink-400 w-5 h-5 mt-1" />
-                                <p className="text-white text-sm">
-                                    <span className="font-semibold">1.5 Lac+ learners</span> cracked top tech companies
-                                </p>
-                            </div>
+                {/* Points Section */}
+                <div className="space-y-6 pt-8">
+                    {/* Point 1 */}
+                    <div className="flex items-start gap-6 bg-white/5 px-6 py-8 rounded-xl">
+                        <CheckCircle className="text-pink-400 w-6 h-6 mt-1" />
+                        <p className="text-white text-lg">
+                            <span className="font-semibold">128% average hike</span> via our placement cell
+                        </p>
+                    </div>
 
-                            {/* Point 3 */}
-                            <div className="flex items-start gap-4 bg-white/5 px-4 py-3 rounded-lg">
-                                <CheckCircle className="text-pink-400 w-5 h-5 mt-1" />
-                                <p className="text-white text-sm">
-                                    <span className="font-semibold">1,400+ alumni in MAANG</span> & 103 unicorn startups
-                                </p>
-                            </div>
-                        </div>
+                    {/* Point 2 */}
+                    <div className="flex items-start gap-6 bg-white/5 px-6 py-8 rounded-xl">
+                        <CheckCircle className="text-pink-400 w-6 h-6 mt-1" />
+                        <p className="text-white text-lg">
+                            <span className="font-semibold">1.5 Lac+ learners</span> cracked top tech companies
+                        </p>
+                    </div>
+
+                    {/* Point 3 */}
+                    <div className="flex items-start gap-6 bg-white/5 px-6 py-8 rounded-xl">
+                        <CheckCircle className="text-pink-400 w-6 h-6 mt-1" />
+                        <p className="text-white text-lg">
+                            <span className="font-semibold">1,400+ alumni in MAANG</span> & 103 unicorn startups
+                        </p>
                     </div>
                 </div>
+            </div>
+        </div>
 
                 {/* ---------------------------------------------------- */}
 

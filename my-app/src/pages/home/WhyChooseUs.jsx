@@ -1,5 +1,6 @@
 import React from 'react';
 import { CheckCircle, Users, Trophy, Briefcase, TrendingUp, Star } from 'lucide-react';
+import DottedBackground from '../../components/DottedBackground';
 
 export default function WhyChooseUs() {
   const features = [
@@ -89,7 +90,7 @@ export default function WhyChooseUs() {
 
 
         {/* Stats Section */}
-        <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-3xl p-12 text-white">
+        <DottedBackground className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-3xl p-12 text-white">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold mb-4">Our Track Record Speaks</h3>
             <p className="text-gray-300 text-lg">Numbers that prove our commitment to your success</p>
@@ -114,7 +115,7 @@ export default function WhyChooseUs() {
               <div className="text-gray-300">Alumini Network Members</div>
             </div>
           </div>
-        </div>
+        </DottedBackground>
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">

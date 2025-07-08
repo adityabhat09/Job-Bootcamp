@@ -23,17 +23,17 @@ const CoursePage = () => {
     }
 
     return (
-        <div className="pt-20 pb-10 px-4 max-w-5xl mx-auto">
+        <div className="pt-20 pb-10  max-w-full mx-auto">
 
 
             {/* ✅ Hero Section with Dotted Background */}
-            <DottedBackground className="h-full pb-8">
-                <div className="text-center bg-[#F9F9F9] p-8 rounded-2xl shadow mb-10">
-                    <h1 className="text-4xl font-bold text-[#B51D74]">{course.name}</h1>
-                    <p className="mt-4 text-gray-700 text-lg max-w-2xl mx-auto">
+            <DottedBackground className="min-h-[300px] py-30 text-center bg-gray-900">
+                {/* <div className="text-center  p-8 rounded-2xl shadow mb-10"> */}
+                    <h1 className="text-8xl font-bold text-pink-600 pb-8">{course.name}</h1>
+                    <p className="mt-4 text-white text-lg font-semibold max-w-2xl mx-auto">
                         {course.description}
                     </p>
-                </div>
+                {/* </div> */}
             </DottedBackground>
 
 

@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const moduleSchema = new mongoose.Schema({
   title: String,
   description: String,
+  topics: [String], // 🆕 Add this line for subtopics
 });
 
 const courseSchema = new mongoose.Schema({

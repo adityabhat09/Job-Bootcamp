@@ -1,17 +1,16 @@
-/* bring in EVERYTHING (reset + utilities) */
 @import "tailwindcss";
 
-/* your custom additions */
+/* Animation speed & distance are variables so JS can edit them */
 @theme {
-  --animation-marquee: marquee 20s linear infinite;
+  --marquee-time: 60s;          /* adjust speed here */
 }
 
 @layer utilities {
   @keyframes marquee {
-    0%   { transform: translateX(0%); }
-    100% { transform: translateX(-50%); }
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(var(--marquee-dist)); }
   }
   .animate-marquee {
-    animation: var(--animation-marquee);
+    animation: marquee var(--marquee-time) linear infinite;
   }
 }

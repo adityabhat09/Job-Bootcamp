@@ -103,6 +103,11 @@ const CoursePage = () => {
 
 
             {/* company logo slider */}
+            <div className="max-w-full mx-10 px-2 sm:px-6 lg:px-8 mt-15 mb-10 text-center">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                    <span className='text-[#C63687]'>JustAcademy</span> Students get hired in
+                </h1>
+            </div>
             <LogoSlider/>
         </div>
     );

@@ -1,36 +1,47 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import {
-  SiAccenture,
-  SiInfosys,
-  SiWipro,
-  
-  SiMeta,
-  SiOracle,
-  SiGoogle
-  
-} from "react-icons/si";            // all of these exist in Simple‑Icons v9+
+  SiAccenture, SiInfosys, SiWipro, SiGoogle, SiMeta, SiOracle,
+} from "react-icons/si";
 
-// Every logo is just a React component
 const logos = [
   { Icon: SiAccenture, title: "Accenture" },
   { Icon: SiInfosys,   title: "Infosys"   },
   { Icon: SiWipro,     title: "Wipro"     },
-  { Icon: SiGoogle,       title: "IBM"       },
-  { Icon: SiMeta, title: "Microsoft" },
-  { Icon: SiOracle, title: "AWS"       },
+  { Icon: SiGoogle,    title: "Google"    },
+  { Icon: SiMeta,      title: "Meta"      },
+  { Icon: SiOracle,    title: "Oracle"    },
 ];
 
 export default function LogoSlider() {
-  // duplicate list for seamless loop
+  const trackRef = useRef(null);
+
+  // Duplicate list to allow seamless loop
   const track = [...logos, ...logos];
+
+  // Measure half‑width once on mount (and on window resize)
+  useEffect(() => {
+    const setVar = () => {
+      const el = trackRef.current;
+      if (!el) return;
+      const halfWidth = el.scrollWidth / 2;    // one copy
+      el.style.setProperty("--marquee-dist", `-${halfWidth}px`);
+    };
+    setVar();
+    window.addEventListener("resize", setVar);
+    return () => window.removeEventListener("resize", setVar);
+  }, []);
 
   return (
     <div className="overflow-hidden py-6 bg-white">
-      <div className="flex w-[200%] animate-marquee text-gray-800">
+      {/* min-w-max so content decides width; gap‑12 adds spacing */}
+      <div
+        ref={trackRef}
+        className="flex min-w-max animate-marquee gap-10 lg:gap-30 text-gray-800"
+      >
         {track.map(({ Icon, title }, i) => (
           <div
             key={i}
-            className="flex-shrink-0 w-40 mx-4 flex items-center justify-center"
+            className="flex-shrink-0 w-40 flex items-center justify-center"
           >
             <Icon
               aria-label={title}

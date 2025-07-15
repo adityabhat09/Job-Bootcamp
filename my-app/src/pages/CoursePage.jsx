@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import DottedBackground from '../components/DottedBackground';
 import { Plus, Minus } from 'lucide-react';
+import LogoSlider from '../components/LogoSlider';
 
 
 const CoursePage = () => {
@@ -99,6 +100,10 @@ const CoursePage = () => {
                     </div>
                 </div>
             </section>
+
+
+            {/* company logo slider */}
+            <LogoSlider/>
         </div>
     );
 

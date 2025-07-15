@@ -1,18 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import logo from '../images/logo.jpg';
 import { ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [courses, setCourses] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  // Close dropdown when clicking outside
-  React.useEffect(() => {
+  // Fetch courses from backend
+  useEffect(() => {
+    axios.get('/api/courses')
+      .then((res) => {
+        setCourses(res.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error('Error loading courses:', err);
+        setLoading(false);
+      });
+  }, []);
+
+  // Close dropdown on outside click
+  useEffect(() => {
     const handleClickOutside = (e) => {
       if (!e.target.closest('.dropdown-container')) {
         setDropdownOpen(false);
       }
     };
-
     document.addEventListener('click', handleClickOutside);
     return () => document.removeEventListener('click', handleClickOutside);
   }, []);
@@ -28,60 +44,52 @@ const Navbar = () => {
         {/* Navigation Links */}
         <ul className="hidden md:flex space-x-10 text-gray-700 font-semibold text-lg relative">
           <li>
-            <a href="/" className="hover:text-[#B51D74] transition-colors duration-300">
+            <Link to="/" className="hover:text-[#B51D74] transition-colors duration-300">
               Home
-            </a>
+            </Link>
           </li>
 
-          {/* Job Bootcamps Dropdown */}
+          {/* ✅ Job Bootcamps Dropdown */}
           <li className="relative dropdown-container">
             <button
               onClick={() => setDropdownOpen(!dropdownOpen)}
-              className="hover:text-[#B51D74] transition-colors duration-300 focus:outline-none flex items-center gap-1 "
+              className="hover:text-[#B51D74] transition-colors duration-300 focus:outline-none flex items-center gap-1"
             >
               Job Bootcamps
               <ChevronDown className="w-6 h-6 mt-0.5 transition-transform" />
             </button>
 
             {dropdownOpen && (
-              <ul className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-md py-2 min-w-[180px] border border-gray-200 z-50">
-                <li>
-                  <a
-                    href="/job-bootcamps/mern"
-                    className="block px-4 py-2 hover:bg-gray-100 hover:text-[#B51D74]"
-                  >
-                    MERN Stack
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/job-bootcamps/mean"
-                    className="block px-4 py-2 hover:bg-gray-100 hover:text-[#B51D74]"
-                  >
-                    MEAN Stack
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/job-bootcamps/flutter"
-                    className="block px-4 py-2 hover:bg-gray-100 hover:text-[#B51D74]"
-                  >
-                    Data Analytics
-                  </a>
-                </li>
+              <ul className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-md py-2 min-w-[200px] border border-gray-200 z-50">
+                {loading ? (
+                  <li className="px-4 py-2 text-gray-500">Loading...</li>
+                ) : courses.length === 0 ? (
+                  <li className="px-4 py-2 text-gray-500">No courses available</li>
+                ) : (
+                  courses.map((course) => (
+                    <li key={course.slug}>
+                      <Link
+                        to={`/courses/${course.slug}`}
+                        className="block px-4 py-2 hover:bg-gray-100 hover:text-[#B51D74]"
+                      >
+                        {course.name}
+                      </Link>
+                    </li>
+                  ))
+                )}
               </ul>
             )}
           </li>
 
           <li>
-            <a href="/about" className="hover:text-[#B51D74] transition-colors duration-300">
+            <Link to="/about" className="hover:text-[#B51D74] transition-colors duration-300">
               About Us
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/contact" className="hover:text-[#B51D74] transition-colors duration-300">
+            <Link to="/contact" className="hover:text-[#B51D74] transition-colors duration-300">
               Contact Us
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

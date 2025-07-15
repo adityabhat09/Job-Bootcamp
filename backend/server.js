@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ✅ INSERT FUNCTION HERE
+// ✅ INSERT FUNCTION HERE , optional can delete later
 const insertTestCourse = async () => {
   const exists = await Course.findOne({ slug: 'mern' });
   if (exists) {
@@ -17,22 +17,24 @@ const insertTestCourse = async () => {
     return;
   }
 
-  await Course.create({
-    slug: 'mern',
-    name: 'MERN Stack Bootcamp',
-    description: 'Learn fullstack development using MongoDB, Express, React, and Node.js.',
-    fees: 9999,
-    modules: [
-      {
-        title: 'Intro to MERN',
-        description: 'Understand how the stack fits together',
-      },
-      {
-        title: 'React Basics',
-        description: 'Learn components, state, props, and hooks',
-      },
-    ],
-  });
+  // await Course.create({
+  //   slug: 'mern',
+  //   name: 'MERN Stack Bootcamp',
+  //   description: 'Learn fullstack development using MongoDB, Express, React, and Node.js.',
+  //   fees: 9999,
+  //   modules: [
+  //     {
+  //       title: 'Intro to MERN',
+  //       description: 'Understand how the stack fits together',
+  //     },
+  //     {
+  //       title: 'React Basics',
+  //       description: 'Learn components, state, props, and hooks',
+  //     },
+  //   ],
+  // });
+
+  // the above line automatically creates/inserts a mern course in db . so it will be present by default wihtout needing to insert a course via postman 
 
   console.log('✅ Test course "mern" inserted');
 };

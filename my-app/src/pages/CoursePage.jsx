@@ -6,6 +6,7 @@ import { Plus, Minus } from 'lucide-react';
 import LogoSlider from '../components/LogoSlider';
 import PlacementBenefits from '../components/PlacementBenefits';
 import PlacementBenefits2 from '../components/PlacementBenefits2';
+import FAQAccordion from '../components/FAQAccordion';
 
 
 const CoursePage = () => {
@@ -119,6 +120,11 @@ const CoursePage = () => {
 
             {/* benefits beyond learning component */}
             <PlacementBenefits2/>
+
+
+            {/* faq component */}
+            <FAQAccordion faqs={course.faqs} />
+
         </div>
     );
 

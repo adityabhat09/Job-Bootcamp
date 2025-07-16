@@ -5,6 +5,7 @@ import DottedBackground from '../components/DottedBackground';
 import { Plus, Minus } from 'lucide-react';
 import LogoSlider from '../components/LogoSlider';
 import PlacementBenefits from '../components/PlacementBenefits';
+import PlacementBenefits2 from '../components/PlacementBenefits2';
 
 
 const CoursePage = () => {
@@ -114,6 +115,10 @@ const CoursePage = () => {
 
             {/* placement benefits component */}
             <PlacementBenefits/>
+
+
+            {/* benefits beyond learning component */}
+            <PlacementBenefits2/>
         </div>
     );
 

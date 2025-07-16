@@ -4,6 +4,7 @@ import axios from 'axios';
 import DottedBackground from '../components/DottedBackground';
 import { Plus, Minus } from 'lucide-react';
 import LogoSlider from '../components/LogoSlider';
+import PlacementBenefits from '../components/PlacementBenefits';
 
 
 const CoursePage = () => {
@@ -109,6 +110,10 @@ const CoursePage = () => {
                 </h1>
             </div>
             <LogoSlider/>
+
+
+            {/* placement benefits component */}
+            <PlacementBenefits/>
         </div>
     );
 

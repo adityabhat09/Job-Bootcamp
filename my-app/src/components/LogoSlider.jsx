@@ -6,9 +6,11 @@ import {
 const logos = [
   { Icon: SiAccenture, title: "Accenture" },
   { Icon: SiInfosys,   title: "Infosys"   },
-  { Icon: SiWipro,     title: "Wipro"     },
-  { Icon: SiGoogle,    title: "Google"    },
   { Icon: SiMeta,      title: "Meta"      },
+  { Icon: SiGoogle,    title: "Google"    },
+  { Icon: SiWipro,     title: "Wipro"     },
+  
+  
   { Icon: SiOracle,    title: "Oracle"    },
 ];
 
@@ -32,7 +34,7 @@ export default function LogoSlider() {
   }, []);
 
   return (
-    <div className="overflow-hidden py-6 bg-white">
+    <div className="overflow-hidden py-6 bg-white ">
       {/* min-w-max so content decides width; gap‑12 adds spacing */}
       <div
         ref={trackRef}
@@ -41,7 +43,7 @@ export default function LogoSlider() {
         {track.map(({ Icon, title }, i) => (
           <div
             key={i}
-            className="flex-shrink-0 w-40 flex items-center justify-center"
+            className="flex-shrink-0 w-30 flex items-center justify-center"
           >
             <Icon
               aria-label={title}

@@ -59,10 +59,10 @@ return (
           </li>
 
           {/* ✅ Job Bootcamps Dropdown (Improved Interactivity) */}
-          <li className="relative">
+          <li className="relative dropdown-container">
             <button
               onClick={() => setDropdownOpen(!dropdownOpen)}
-              onBlur={() => setDropdownOpen(false)} // Optional: close dropdown on focus loss
+              
               className="hover:text-[#B51D74] transition-colors duration-300 focus:outline-none flex items-center gap-1"
             >
               Job Bootcamps

@@ -222,7 +222,8 @@ const CoursePage = ({ onOpen }) => {
                 </section>
 
 
-
+                <section id="contact"></section>
+                <div className='py-5'></div>
                 {/* conatct us section */}
                 <ContactUs/>
 

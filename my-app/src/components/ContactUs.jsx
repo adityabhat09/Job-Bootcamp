@@ -17,6 +17,7 @@ import {
     Twitter,
     Linkedin
 } from 'lucide-react';
+import DottedBackground from './DottedBackground';
 
 // A simple component for each contact detail card
 const InfoCard = ({ icon, title, children }) => (
@@ -130,10 +131,10 @@ const ContactUs = () => {
     }
 
     return (
-        <div className="bg-[#0f172a] text-white py-16 px-4 sm:px-6 lg:px-8">
+        <DottedBackground className="bg-gray-900 text-white py-16 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl font-extrabold sm:text-4xl" style={{ color: '#B81F77' }}>
+                    <h2 className="text-3xl font-extrabold lg:text-5xl pt-5" style={{ color: '#B81F77' }}>
                         Get in Touch
                     </h2>
                     <p className="mt-4 text-lg text-gray-400">
@@ -299,7 +300,7 @@ const ContactUs = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </DottedBackground>
     );
 };
 

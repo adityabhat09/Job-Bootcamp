@@ -8,6 +8,7 @@ import PlacementBenefits from '../components/PlacementBenefits';
 import PlacementBenefits2 from '../components/PlacementBenefits2';
 import FAQAccordion from '../components/FAQAccordion';
 import BookWebinarModal from '../components/BookWebinarModal';
+import FloatingNav from '../components/FloatingNav';
 
 const CoursePage = ({ onOpen }) => {
     const { slug } = useParams();
@@ -35,6 +36,18 @@ const CoursePage = ({ onOpen }) => {
         { value: '1200+', label: 'Companies Hiring' },
         { value: '128%', label: 'Average Hike' },
         { value: '1.5 L+', label: 'Learners' },
+    ];
+
+
+    // for floating nav
+    const sections = [
+        // { id: 'about', label: 'About the course' },
+        { id: 'curriculum', label: 'Curriculum' },
+        { id: 'hire', label: 'Hires' },
+        { id: 'benefits', label: 'Benefits' },
+        // { id: 'plans', label: 'Plans' },
+        { id: 'faqs', label: 'FAQs' },
+        { id: 'contact', label: 'Contact Us' },
     ];
 
 
@@ -104,12 +117,16 @@ const CoursePage = ({ onOpen }) => {
                 </DottedBackground>
                 {/* --- END OF HERO SECTION --- */}
 
+                <div className='py-5'></div>
+                <FloatingNav sections={sections} /> {/* --- sections are defined above in const sections --- */}
 
+                <section id="curriculum"></section>     {/* for floating nav scrolling */} 
+                <div className='py-10'></div>            
                 {/* Course Curriculum Accordion */}
-                <section id="curriculum" className="scroll-mt-16 py-12 sm:py-16 bg-white">
+                <section  className=" py-4 bg-white">
                     <div className="max-w-full mx-10 px-2 sm:px-6 lg:px-8">
                         <div className="text-left mb-12">
-                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 ">
                                 Course <span className="text-[#C63687]">Curriculum</span>
                             </h2>
                             <p className="text-base sm:text-lg text-gray-600 max-w-3xl">
@@ -172,24 +189,40 @@ const CoursePage = ({ onOpen }) => {
 
 
                 {/* company logo slider */}
-                <div className="max-w-full mx-10 px-2 sm:px-6 lg:px-8 mt-15 mb-24 text-center">
-                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-                        <span className='text-[#C63687]'>JustAcademy</span> Students get hired in
-                    </h1>
-                </div>
+                <section id='hire'>
+                    <div className='py-10'></div>
+                    <div className="max-w-full mx-10 px-2 sm:px-6 lg:px-8 mt-10 mb-24 text-center">
+                        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 ">
+                            <span className='text-[#C63687]'>JustAcademy</span> Students get hired in
+                        </h1>
+                    </div>
+                </section>
+
                 <LogoSlider />
+
 
                 <div className='py-10'></div>
                 {/* placement benefits component */}
-                <PlacementBenefits />
+                <section id="benefits">
+                    <PlacementBenefits />
+                </section>
 
 
                 {/* benefits beyond learning component */}
-                <PlacementBenefits2 />
+                <section>
+                    <PlacementBenefits2 />
+                </section>
 
 
                 {/* faq component */}
-                <FAQAccordion faqs={course.faqs} />
+                <section id="faqs">
+                    <div className='py-5'></div>
+                    <FAQAccordion faqs={course.faqs} />
+                </section>
+
+
+
+                {/* conatct us section */}
 
             </div>
         </>

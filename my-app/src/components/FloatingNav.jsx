@@ -28,6 +28,8 @@ export default function FloatingNav({ sections }) {
 
   const handleClick = (e, id) => {
     e.preventDefault();
+
+    
     const el = document.getElementById(id);
     if (el) {
       window.scrollTo({ top: el.offsetTop - 60, behavior: 'smooth' });
@@ -35,7 +37,7 @@ export default function FloatingNav({ sections }) {
   };
 
   return (
-    <div className="sticky top-20 z-40 bg-white/80 backdrop-blur-md px-4 py-2 rounded-full mx-auto max-w-4xl shadow-md">
+    <div className="sticky top-24 z-40 bg-white/80 backdrop-blur-md px-4 py-2 rounded-full mx-auto max-w-4xl shadow-md border-[1px] border-gray-400">
       <nav className="flex space-x-4 overflow-x-auto">
         {sections.map(({ id, label }) => (
           <a
@@ -45,8 +47,8 @@ export default function FloatingNav({ sections }) {
             className={
               `whitespace-nowrap px-4 py-2 rounded-full transition-colors font-medium ` +
               (active === id
-                ? 'bg-black text-white'
-                : 'text-gray-600 hover:text-gray-900')
+                ? 'bg-[#B51C72] text-white'
+                : 'text-gray-600 hover:text-[#B51C72]')
             }
           >
             {label}

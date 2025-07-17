@@ -81,7 +81,7 @@ const Navbar = () => {
             )}
           </li>
 
-          <li>
+          {/* <li>
             <Link to="/about" className="hover:text-[#B51D74] transition-colors duration-300">
               About Us
             </Link>
@@ -90,7 +90,7 @@ const Navbar = () => {
             <Link to="/contact" className="hover:text-[#B51D74] transition-colors duration-300">
               Contact Us
             </Link>
-          </li>
+          </li> */}
         </ul>
       </div>
     </nav>

@@ -9,6 +9,7 @@ import PlacementBenefits2 from '../components/PlacementBenefits2';
 import FAQAccordion from '../components/FAQAccordion';
 import BookWebinarModal from '../components/BookWebinarModal';
 import FloatingNav from '../components/FloatingNav';
+import ContactUs from '../components/ContactUs';
 
 const CoursePage = ({ onOpen }) => {
     const { slug } = useParams();
@@ -223,6 +224,7 @@ const CoursePage = ({ onOpen }) => {
 
 
                 {/* conatct us section */}
+                <ContactUs/>
 
             </div>
         </>

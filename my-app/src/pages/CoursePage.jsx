@@ -117,12 +117,12 @@ const CoursePage = ({ onOpen }) => {
                             </p>
                         </div>
 
-                        <div className="space-y-4">
+                        <div className="columns-1 lg:columns-2 gap-6">
                             {course.modules?.length > 0 ? (
                                 course.modules.map((mod, idx) => (
                                     <div
                                         key={idx}
-                                        className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100"
+                                        className="break-inside-avoid mb-6 bg-white rounded-lg shadow-md overflow-hidden border border-gray-100"
                                     >
                                         <button
                                             onClick={() =>

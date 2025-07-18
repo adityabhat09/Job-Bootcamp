@@ -29,7 +29,6 @@ export default function FloatingNav({ sections }) {
     const handleClick = (e, id) => {
         e.preventDefault();
 
-
         const el = document.getElementById(id);
         if (el) {
             window.scrollTo({ top: el.offsetTop - 60, behavior: 'smooth' });
@@ -37,8 +36,10 @@ export default function FloatingNav({ sections }) {
     };
 
     return (
-        <div className="sticky top-23 z-40 bg-white backdrop-blur-md px-4 py-2 rounded-4xl mx-auto w-fit shadow-md border border-gray-400">
-            <nav className="flex justify-center space-x-4 overflow-x-auto">
+        // This container is correctly constrained
+        <div className="sticky top-23 z-40 bg-white backdrop-blur-md px-4 py-2 rounded-4xl mx-auto max-w-[80vw] lg:max-w-[40vw]  shadow-md border border-gray-400">
+            {/* The justify-content is now responsive */}
+            <nav className="flex justify-start md:justify-center space-x-4 overflow-x-auto">
                 {sections.map(({ id, label }) => (
                     <a
                         key={id}
@@ -57,5 +58,4 @@ export default function FloatingNav({ sections }) {
             </nav>
         </div>
     );
-
 }

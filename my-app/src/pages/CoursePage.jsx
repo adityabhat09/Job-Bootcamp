@@ -71,18 +71,18 @@ const CoursePage = ({ onOpen }) => {
 
             <div className="pt-20  max-w-full mx-auto">
                 {/* --- REVISED HERO SECTION --- */}
-                <DottedBackground className="py-20 text-center bg-gray-900 mb-20">
+                <DottedBackground className="py-12 md:py-16 lg:py-20 text-center bg-gray-900 mb-20">
                     <div className="max-w-4xl mx-auto px-4">
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-pink-600 leading-tight">
                             {course.name}
                         </h1>
 
-                        <p className="mt-6 text-lg text-gray-300 max-w-2xl mx-auto">
+                        <p className="mt-4 sm:mt-6 text-base sm:text-lg text-gray-300 max-w-2xl mx-auto">
                             {course.description}
                         </p>
 
                         {/* Feature Pills */}
-                        <div className="mt-8 flex flex-wrap justify-center items-center gap-4">
+                        <div className="mt-6 sm:mt-8 flex flex-wrap justify-center items-center gap-2 sm:gap-4">
                             {heroFeatures.map((feature, index) => (
                                 <div key={index} className="flex items-center gap-2 bg-gray-800/50 border border-gray-700 text-gray-300 text-sm px-3 py-1.5 rounded-full">
                                     {feature.icon}
@@ -92,7 +92,7 @@ const CoursePage = ({ onOpen }) => {
                         </div>
 
                         {/* Action Buttons */}
-                        <div className="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
+                        <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
                             <button className="bg-pink-600 text-white font-semibold px-8 py-3 rounded-lg hover:bg-pink-700 transition-colors w-full sm:w-auto">
                                 Register Now
                             </button>
@@ -104,7 +104,7 @@ const CoursePage = ({ onOpen }) => {
                         </div>
 
                         {/* Stats Section */}
-                        <div className="mt-16 bg-gray-950/50 border border-gray-800 backdrop-blur-sm p-6 sm:p-8 rounded-2xl max-w-4xl mx-auto">
+                        <div className="mt-12 sm:mt-16 bg-gray-950/50 border border-gray-800 backdrop-blur-sm p-4 sm:p-6 md:p-8 rounded-2xl max-w-4xl mx-auto">
                             <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-8 gap-x-4">
                                 {heroStats.map((stat, index) => (
                                     <div key={index} className="text-center">
@@ -121,8 +121,8 @@ const CoursePage = ({ onOpen }) => {
                 <div className='py-5'></div>
                 <FloatingNav sections={sections} /> {/* --- sections are defined above in const sections --- */}
 
-                <section id="curriculum"></section>     {/* for floating nav scrolling */} 
-                <div className='py-10'></div>            
+                <section id="curriculum"></section>   {/* for floating nav scrolling */} 
+                <div className='py-10'></div>          
                 {/* Course Curriculum Accordion */}
                 <section  className=" py-4 bg-white">
                     <div className="max-w-full mx-10 px-2 sm:px-6 lg:px-8">

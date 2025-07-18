@@ -1,6 +1,48 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 export default function BookWebinarModal({ isOpen, onClose }) {
+    const form = useRef();
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        message: 'I am interested in the free webinar.' // Default message
+    });
+    const [isSending, setIsSending] = useState(false);
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
+
+    const sendEmail = (e) => {
+        e.preventDefault(); // Prevents the default form submission behavior (page reload)
+        setIsSending(true);
+
+        emailjs.sendForm(
+            'service_opmzybd',      // Your Service ID
+            'template_wv116ka',     // Your Template ID
+            form.current,           // Form element reference
+            'zL-QIZHE2XqwI-1MF'       // Your Public Key
+        ).then(
+            (result) => {
+                console.log('SUCCESS!', result.text);
+                alert('Booking confirmed! We have sent you a confirmation email.');
+                setIsSending(false);
+                onClose(); // Close the modal on success
+            },
+            (error) => {
+                console.log('FAILED...', error.text);
+                alert('Failed to confirm booking. Please try again.');
+                setIsSending(false);
+            }
+        );
+    };
+
     if (!isOpen) return null;
 
     return (
@@ -22,8 +64,9 @@ export default function BookWebinarModal({ isOpen, onClose }) {
                     Book Your Seat
                 </h3>
 
-                {/* Form fields */}
-                <form className="space-y-5">
+                {/* Form */}
+                {/* Add ref and onSubmit to the form tag */}
+                <form ref={form} onSubmit={sendEmail} className="space-y-5">
                     {/* Name */}
                     <div>
                         <label className="block text-base font-medium text-[#C63687] mb-2">
@@ -31,19 +74,27 @@ export default function BookWebinarModal({ isOpen, onClose }) {
                         </label>
                         <input
                             type="text"
+                            name="name" // Matches {{name}} in your template
                             placeholder="Your name"
+                            value={formData.name}
+                            onChange={handleInputChange}
+                            required
                             className="w-full p-4 border border-gray-300 rounded-lg placeholder-gray-400 text-base"
                         />
                     </div>
 
-                    {/* phone no  */}
+                    {/* Phone Number */}
                     <div>
                         <label className="block text-base font-medium text-[#C63687] mb-2">
                             Phone Number
                         </label>
                         <input
-                            type="number"
+                            type="tel" // Use "tel" for phone numbers
+                            name="phone" // Matches {{phone}} in your template
                             placeholder="Your phone no."
+                            value={formData.phone}
+                            onChange={handleInputChange}
+                            required
                             className="w-full p-4 border border-gray-300 rounded-lg placeholder-gray-400 text-base"
                         />
                     </div>
@@ -55,17 +106,29 @@ export default function BookWebinarModal({ isOpen, onClose }) {
                         </label>
                         <input
                             type="email"
+                            name="email" // Matches {{email}} in your template
                             placeholder="you@example.com"
+                            value={formData.email}
+                            onChange={handleInputChange}
+                            required
                             className="w-full p-4 border border-gray-300 rounded-lg placeholder-gray-400 text-base"
                         />
                     </div>
 
-                    {/* Submit */}
+                    {/* Hidden Message Field */}
+                    <input
+                        type="hidden"
+                        name="message" // Matches {{message}} in your template
+                        value={formData.message}
+                    />
+
+                    {/* Submit Button */}
                     <button
                         type="submit"
-                        className="w-full bg-pink-600 hover:bg-pink-800 text-white font-semibold py-4 rounded-lg text-lg transition-colors"
+                        disabled={isSending}
+                        className="w-full bg-pink-600 hover:bg-pink-800 text-white font-semibold py-4 rounded-lg text-lg transition-colors disabled:bg-gray-400"
                     >
-                        Confirm Booking
+                        {isSending ? 'Booking...' : 'Confirm Booking'}
                     </button>
                 </form>
             </div>

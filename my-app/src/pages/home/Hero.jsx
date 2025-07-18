@@ -2,29 +2,15 @@ import React from 'react';
 import { CheckCircle } from 'lucide-react';
 import DottedBackground from '../../components/DottedBackground'
 
-// const DottedBackground = ({ children, className = "" }) => {
-//     return (
-//         <div className={`relative ${className}`}>
-//             <div 
-//                 className="absolute inset-0 opacity-20"
-//                 style={{
-//                     backgroundImage: `radial-gradient(circle, white 1px, transparent 1px)`,
-//                     backgroundSize: '30px 30px',
-//                 }}
-//             />
-//             <div className="relative z-10">
-//                 {children}
-//             </div>
-//         </div>
-//     );
-// };
-
 const Hero = () => {
     return (
         <DottedBackground className="h-full pb-8 bg-gray-900" >
-            <div className="pt-28 flex h-full " id="contact">
+            {/* ✅ Changed to flex-col for mobile, md:flex-row for desktop */}
+            <div className="pt-28 flex h-full flex-col md:flex-row" id="contact">
 
-                <div className="w-1/2 h-full flex items-center justify-center px-12">
+                {/* Left Column */}
+                {/* ✅ Changed to w-full on mobile, md:w-1/2 on desktop. Adjusted padding. */}
+                <div className="w-full md:w-1/2 h-full flex items-center justify-center px-6 md:px-12">
                     <div className="max-w-3xl text-left space-y-8">
                         <p className="text-pink-400 font-medium text-lg">Restricted by opportunities?</p>
 
@@ -36,7 +22,7 @@ const Hero = () => {
                         <div className="space-y-6 pt-8">
                             {/* Point 1 */}
                             <div className="flex items-start gap-6 bg-white/5 px-6 py-8 rounded-xl">
-                                <CheckCircle className="text-pink-400 w-6 h-6 mt-1" />
+                                <CheckCircle className="text-pink-400 w-6 h-6 mt-1 flex-shrink-0" />
                                 <p className="text-white text-lg">
                                     <span className="font-semibold">128% average hike</span> via our placement cell
                                 </p>
@@ -44,7 +30,7 @@ const Hero = () => {
 
                             {/* Point 2 */}
                             <div className="flex items-start gap-6 bg-white/5 px-6 py-8 rounded-xl">
-                                <CheckCircle className="text-pink-400 w-6 h-6 mt-1" />
+                                <CheckCircle className="text-pink-400 w-6 h-6 mt-1 flex-shrink-0" />
                                 <p className="text-white text-lg">
                                     <span className="font-semibold">1.5 Lac+ learners</span> cracked top tech companies
                                 </p>
@@ -52,7 +38,7 @@ const Hero = () => {
 
                             {/* Point 3 */}
                             <div className="flex items-start gap-6 bg-white/5 px-6 py-8 rounded-xl">
-                                <CheckCircle className="text-pink-400 w-6 h-6 mt-1" />
+                                <CheckCircle className="text-pink-400 w-6 h-6 mt-1 flex-shrink-0" />
                                 <p className="text-white text-lg">
                                     <span className="font-semibold">1,400+ alumni in MAANG</span> & 103 unicorn startups
                                 </p>
@@ -63,11 +49,11 @@ const Hero = () => {
 
                 {/* ---------------------------------------------------- */}
 
-                {/* Right Column */}
-                <div className="w-1/2 h-full flex items-center justify-center px-8">
-                    {/* Mobile-style Contact Us Form */}
+                {/* Right Column (Form) */}
+                {/* ✅ Changed to w-full on mobile, md:w-1/2 on desktop. Adjusted padding and added top margin for mobile. */}
+                <div className="w-full md:w-1/2 h-full flex items-center justify-center px-6 md:px-8 mt-16 md:mt-0">
                     <div className="w-full max-w-lg">
-                        <form className="bg-white rounded-4xl p-8 border-12 border-gray-950 shadow-[0_0_30px_rgba(255,255,255,0.3)]">
+                        <form className="bg-white rounded-3xl p-8 shadow-[0_0_30px_rgba(255,255,255,0.3)]">
                             <h2 className="text-sm text-gray-500 pb-4">Let's find the right course for you</h2>
                             <h2 className="text-3xl font-bold text-gray-900 mb-8">Contact Us</h2>
 
@@ -112,20 +98,13 @@ const Hero = () => {
                             </div>
 
                             {/* Submit Button */}
-                            <button className="w-full bg-pink-700 hover:bg-pink-900 text-white font-semibold py-4 px-8 rounded-lg transition-colors text-lg">
+                            <button className="w-full bg-[#B81F77] hover:bg-[#9F1A65] text-white font-semibold py-4 px-8 rounded-lg transition-colors text-lg">
                                 Send Message
                             </button>
-
-                            {/* Footer Text */}
-                            {/* <p className="text-sm text-gray-500 mt-6 leading-relaxed">
-                                I authorize Coding Ninjas to contact me via course updates & offers via
-                                Email/SMS/WhatsApp/Call. I have read and agree to <span className="text-blue-600">Privacy Policy</span> & <span className="text-blue-600">Terms of use</span>
-                            </p> */}
                         </form>
                     </div>
                 </div>
 
-                {/* right col end */}
             </div>
         </DottedBackground>
     );

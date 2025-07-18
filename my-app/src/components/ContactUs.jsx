@@ -109,7 +109,7 @@ const ContactUs = () => {
             name: formData.name,
             email: formData.email,
             phone: formData.phone,
-            message: formData.message,
+            message: `This person is reaching out from the "Job Bootcamp" site.\n${formData.message}`,
         };
 
         emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)

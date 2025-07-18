@@ -7,7 +7,7 @@ export default function BookWebinarModal({ isOpen, onClose }) {
         name: '',
         email: '',
         phone: '',
-        message: 'I am interested in the free webinar.' // Default message
+        message: 'I am reaching out from Job Bootcamp site and I am interested in the free webinar.' // Default message
     });
     const [isSending, setIsSending] = useState(false);
 

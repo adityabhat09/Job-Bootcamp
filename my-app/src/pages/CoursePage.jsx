@@ -69,9 +69,9 @@ const CoursePage = ({ onOpen }) => {
             />
 
 
-            <div className="pt-20 pb-10 max-w-full mx-auto">
+            <div className="pt-20  max-w-full mx-auto">
                 {/* --- REVISED HERO SECTION --- */}
-                <DottedBackground className="py-20 text-center bg-gray-900">
+                <DottedBackground className="py-20 text-center bg-gray-900 mb-20">
                     <div className="max-w-4xl mx-auto px-4">
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-pink-600 leading-tight">
                             {course.name}

@@ -5,6 +5,10 @@
   --marquee-time: 60s;          /* adjust speed here */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer utilities {
   @keyframes marquee {
     0%   { transform: translateX(0); }

@@ -21,8 +21,8 @@ import DottedBackground from '../../components/DottedBackground'
 
 const Hero = () => {
     return (
-        <DottedBackground className="h-full pb-8 bg-gray-900">
-            <div className="pt-28 flex h-full">
+        <DottedBackground className="h-full pb-8 bg-gray-900" >
+            <div className="pt-28 flex h-full " id="contact">
 
                 <div className="w-1/2 h-full flex items-center justify-center px-12">
                     <div className="max-w-3xl text-left space-y-8">

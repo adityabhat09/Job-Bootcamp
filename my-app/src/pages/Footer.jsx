@@ -1,0 +1,91 @@
+import React from 'react';
+import { Facebook, Twitter, Linkedin, Instagram, MapPin } from 'lucide-react';
+import logo from '../images/logo.jpg'
+import { HashLink } from 'react-router-hash-link';
+
+const Footer = () => {
+    // Replace with your actual social media profile URLs
+    const socialLinks = {
+        facebook: 'https://facebook.com/your-profile',
+        twitter: 'https://twitter.com/your-profile',
+        linkedin: 'https://linkedin.com/in/your-profile',
+        instagram: 'https://instagram.com/your-profile',
+        googleMaps: 'http://googleusercontent.com/maps.google.com/2'
+    };
+
+    return (
+        <footer className="bg-gray-900 text-white pt-12 pb-8 border-t-2 border-[#B81F77]">
+            <div className="container mx-auto px-6">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+                    {/* */}
+                    <div className="col-span-1">
+                        <div className="h-12 mb-4 flex items-center justify-center">
+                            {/* Add your <img src="/logo.png" alt="JustAcademy Logo" /> here */}
+                            <img src={logo} alt='justacademy logo' className='h-12  lg:h-16 w-auto' />
+                        </div>
+                        <p className="text-gray-400">
+                            Master in-demand tech skills with our expert-led bootcamps.
+                        </p>
+                    </div>
+
+                    {/* */}
+                    <div>
+                        <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+                        <ul>
+                            <li className="mb-2"><a href="/" className="hover:text-pink-600">Home</a></li>
+                            <li className="mb-2"><a href="/webinar" className="hover:text-pink-600">Book a Free Webinar</a></li>
+                            <li className="mb-2"><a href="/register" className="hover:text-pink-600">Register Now</a></li>
+                            <li className="mb-2"><a href="#contact" className="hover:text-pink-600">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    {/* */}
+                    <div>
+                        <h3 className="text-lg font-semibold mb-4">Popular Bootcamps</h3>
+                        <ul>
+                            <li className="mb-2"><a href="/courses/mean" className="hover:text-pink-600">MEAN Stack</a></li>
+                            <li className="mb-2"><a href="/courses/mern" className="hover:text-pink-600">MERN Stack</a></li>
+                            <li className="mb-2"><a href="/courses/data-analytics" className="hover:text-pink-600">Data Analytics</a></li>
+                        </ul>
+                    </div>
+
+                    {/* */}
+                    <div>
+                        <h3 className="text-lg font-semibold mb-4">Resources</h3>
+                        <ul>
+                            <li className="mb-2"><a href="/blogs" className="hover:text-pink-600">Blogs</a></li>
+                            <li className="mb-2"><a href="/articles" className="hover:text-pink-600">Articles</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div className="mt-8 border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center">
+                    <p className="text-gray-500 text-sm">© {new Date().getFullYear()} JustAcademy. All rights reserved.</p>
+
+                    {/* */}
+                    <div className="flex space-x-4 mt-4 md:mt-0">
+                        <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-600" aria-label="Facebook">
+                            <Facebook size={20} />
+                        </a>
+                        <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-600" aria-label="Twitter">
+                            <Twitter size={20} />
+                        </a>
+                        <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-600" aria-label="LinkedIn">
+                            <Linkedin size={20} />
+                        </a>
+                        <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-600" aria-label="Instagram">
+                            <Instagram size={20} />
+                        </a>
+                        <a href={socialLinks.googleMaps} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-600" aria-label="Google Maps">
+                            <MapPin size={20} />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    );
+};
+
+export default Footer;

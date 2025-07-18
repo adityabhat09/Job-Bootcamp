@@ -5,6 +5,7 @@ import HomePage from './pages/home/HomePage';
 // import Contact from './pages/Contact';
 // import JobBootcamp from './pages/JobBootcamp';
 import CoursePage from './pages/CoursePage'
+import Footer from './pages/Footer';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/courses/:slug" element={<CoursePage />} />
 
       </Routes>
+      <Footer/>
     </Router>
   );
 }

@@ -137,7 +137,8 @@ const Navbar = () => {
                 Book a Free Webinar
               </Link>
               <Link
-                to="/register"
+                to="#"
+                onClick={handleBookWebinarClick}
                 className="px-5 py-2 bg-[#B81F77] text-white rounded-full font-semibold hover:bg-[#9F1A65] transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
               >
                 Register Now
@@ -224,8 +225,8 @@ const Navbar = () => {
                 Book a Free Webinar
               </Link>
               <Link
-                to="/register"
-                onClick={closeAllMenus}
+                to="#"
+                onClick={handleBookWebinarClick}
                 className="w-full text-center px-5 py-2 bg-[#B81F77] text-white rounded-full font-semibold hover:bg-[#9F1A65] transition-all"
               >
                 Register Now

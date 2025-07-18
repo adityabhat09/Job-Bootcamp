@@ -1,7 +1,9 @@
 import React from 'react';
+import { useState } from 'react';
 import { Facebook, Twitter, Linkedin, Instagram, MapPin } from 'lucide-react';
 import logo from '../images/logo.jpg'
 import { HashLink } from 'react-router-hash-link';
+import BookWebinarModal from '../components/BookWebinarModal';
 
 const Footer = () => {
     // Replace with your actual social media profile URLs
@@ -13,7 +15,15 @@ const Footer = () => {
         googleMaps: 'http://googleusercontent.com/maps.google.com/2'
     };
 
+    const [isModalOpen, setModalOpen] = useState(false);
+
     return (
+        <>
+        <BookWebinarModal
+  isOpen={isModalOpen}
+  onClose={() => setModalOpen(false)}
+/>
+
         <footer className="bg-gray-900 text-white pt-12 pb-8 border-t-2 border-[#B81F77]">
             <div className="container mx-auto px-6">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -34,7 +44,12 @@ const Footer = () => {
                         <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
                         <ul>
                             <li className="mb-2"><a href="/" className="hover:text-pink-600">Home</a></li>
-                            <li className="mb-2"><a href="/webinar" className="hover:text-pink-600">Book a Free Webinar</a></li>
+
+                            <li className="mb-2"><a href='#' onClick={(e) => {
+                                e.preventDefault(); // stop navigation
+                                setModalOpen(true); // open modal
+                            }} className="hover:text-pink-600">Book a Free Webinar</a></li>
+                            
                             <li className="mb-2"><a href="/register" className="hover:text-pink-600">Register Now</a></li>
                             <li className="mb-2"><a href="#contact" className="hover:text-pink-600">Contact Us</a></li>
                         </ul>
@@ -85,6 +100,7 @@ const Footer = () => {
                 </div>
             </div>
         </footer>
+        </>
     );
 };
 

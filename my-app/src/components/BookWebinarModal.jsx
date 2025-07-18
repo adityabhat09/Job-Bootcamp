@@ -4,7 +4,7 @@ export default function BookWebinarModal({ isOpen, onClose }) {
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+        <div className="fixed inset-0 z-60 flex items-center justify-center bg-black/50">
             <div className="relative w-full max-w-md bg-white rounded-2xl p-8 shadow-lg">
                 {/* Close button */}
                 <button

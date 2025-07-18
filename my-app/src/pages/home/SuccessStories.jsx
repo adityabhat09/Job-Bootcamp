@@ -12,61 +12,61 @@ const SuccessStories = () => {
     const stories = [
         {
             id: 1,
-            name: "Shubham Kumar",
-            course: "Data Structures & Algorithms Mastery",
-            date: "Placed in June 2024",
-            testimonial: "Just Academy helped me crack top companies with personalized mock interviews and comprehensive DSA preparation.",
-            link: "/success/shubham-kumar",
+            name: "Abhay Singh",
+            course: "Flutter App Development",
+            date: "Dec, 2023",
+            testimonial: " I recently completed the Flutter course, and overall, it was a valuable learning experience.The course content was... ",
+            link: "https://www.justacademy.co/success-detail/abhay-singh",
             company: "Amazon",
             image: success1,
         },
         {
             id: 2,
-            name: "Priya Sharma",
-            course: "Product Management Certification",
-            date: "Placed in May 2024",
-            testimonial: "The mentorship I received transformed my approach to product thinking and secured multiple offers.",
-            link: "/success/priya-sharma",
+            name: "Tinku Yadav",
+            course: "Flutter App Development",
+            date: "Dec, 2023",
+            testimonial: "One of the best decisions I've ever made for my profession is to enroll in the JustAcademy Flutter App...",
+            link: "https://www.justacademy.co/success-detail/tinku-yadav",
             company: "Microsoft",
             image: success2,
         },
         {
             id: 3,
-            name: "Rahul Verma",
-            course: "Data Science & Machine Learning",
-            date: "Placed in April 2024",
-            testimonial: "The hands-on projects gave me real-world experience that impressed interviewers at top companies.",
-            link: "/success/rahul-verma",
+            name: "Bharat",
+            course: "Flutter App Development",
+            date: "Dec, 2023",
+            testimonial: "I am beyond impressed with the quality of education and the overall learning experience. The course...",
+            link: "https://www.justacademy.co/success-detail/bharat",
             company: "Ola",
             image: success3,
         },
         {
             id: 4,
-            name: "Ananya Patel",
-            course: "Full Stack Web Development",
-            date: "Placed in March 2024",
-            testimonial: "Specialized training helped me master advanced concepts and land my dream job at a top tech company.",
-            link: "/success/ananya-patel",
+            name: "Deepa Shetty",
+            course: "Python",
+            date: "Dec, 2023",
+            testimonial: "Avinash Shukla, our instructor, demonstrated a profound understanding of Python and its applications...",
+            link: "https://www.justacademy.co/success-detail/deepa-shetty",
             company: "Google",
             image: success4,
         },
         {
             id: 5,
-            name: "Vikram Singh",
-            course: "DevOps Engineering Program",
-            date: "Placed in February 2024",
-            testimonial: "Practical approach and industry projects prepared me perfectly for challenging interview processes.",
-            link: "/success/vikram-singh",
+            name: "Shalini Maurya",
+            course: "Android App Development",
+            date: "Dec, 2023",
+            testimonial: "What sets JustAcademy apart is its commitment to excellence. The support from Tejas Gupta and the...",
+            link: "https://www.justacademy.co/success-detail/shalini-maurya",
             company: "Flipkart",
             image: success5,
         },
         {
             id: 6,
-            name: "Sneha Reddy",
-            course: "System Design Masterclass",
-            date: "Placed in January 2024",
-            testimonial: "Mock interviews with industry professionals helped me ace the final rounds with confidence.",
-            link: "/success/sneha-reddy",
+            name: "Sagar Mane",
+            course: "React JS",
+            date: "Jan, 2024",
+            testimonial: "The practical experience gained from the assignments and projects served to reinforce the theoretical... ",
+            link: "https://www.justacademy.co/success-detail/sagar-mane",
             company: "Netflix",
             image: success6,
         }
@@ -113,7 +113,7 @@ const SuccessStories = () => {
                             <div className="relative h-auto bg-gradient-to-r  flex items-center justify-center px-2 py-2 ">
                                 <div className="   w-full h-56 bg-white rounded-lg shadow-lg flex items-center justify-center">
                                     {/* <div className="w-full h-52 bg-gradient-to-r from-[#B51D74] to-[#8a1556] rounded-lg flex items-center justify-center text-white text-4xl font-bold"> */}
-                                        <img src={story.image} alt={story.name} className="w-full h-full object-cover rounded-lg" />
+                                    <img src={story.image} alt={story.name} className="w-full h-full object-cover rounded-lg" />
                                     {/* </div> */}
                                 </div>
                                 {/* <div className="absolute bottom-0 w-full h-8 bg-gradient-to-t from-white to-transparent"></div> */}
@@ -156,14 +156,25 @@ const SuccessStories = () => {
                 </div>
 
                 {/* View All Button */}
-                <div className="text-center mt-16">
-                    <a
-                        href="/success"
-                        className="inline-block bg-[#B51D74] hover:bg-[#9e1964] text-white font-bold py-4 px-10 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
-                    >
-                        View All Success Stories
-                    </a>
+                <div className="w-full mt-16">
+                    <div className="flex flex-wrap justify-center gap-4">
+                        <a
+                            href="https://www.justacademy.co/success"
+                            className="basis-full md:basis-[calc(50%-0.5rem)] bg-[#B51D74] hover:bg-[#9e1964] text-white font-bold py-4 px-4 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-center"
+                        >
+                            View All Success Stories
+                        </a>
+
+                        <a
+                            href="https://www.justacademy.co/student-placed"
+                            className="basis-full md:basis-[calc(50%-0.5rem)] bg-[#B51D74] hover:bg-[#9e1964] text-white font-bold py-4 px-4 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-center"
+                        >
+                            View Placements
+                        </a>
+                    </div>
                 </div>
+
+
             </div>
         </section>
     );

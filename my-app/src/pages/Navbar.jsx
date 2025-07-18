@@ -108,26 +108,40 @@ const Navbar = () => {
                   </ul>
                 )}
               </li>
+
+              <li>
+                <Link to="/blogs" className="hover:text-[#B51D74] transition-colors duration-300">
+                  Blogs
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/articles" className="hover:text-[#B51D74] transition-colors duration-300">
+                  Articles
+                </Link>
+              </li>
             </ul>
 
             {/* ✅ CTA Buttons (Visually Enhanced) */}
             <div className="flex items-center gap-4">
               <Link
-  to="#"
-  onClick={(e) => {
-    e.preventDefault(); // stop navigation
-    setModalOpen(true); // open modal
-  }}
-  className="px-5 py-2 border border-[#B81F77] text-[#B81F77] rounded-full font-semibold hover:bg-[#B81F77] hover:text-white transition-all duration-300 transform hover:scale-105 hover:shadow-md"
->
-  Book a Free Webinar
-</Link>
+                to="#"
+                onClick={(e) => {
+                  e.preventDefault(); // stop navigation
+                  setModalOpen(true); // open modal
+                }}
+                className="px-5 py-2 border border-[#B81F77] text-[#B81F77] rounded-full font-semibold hover:bg-[#B81F77] hover:text-white transition-all duration-300 transform hover:scale-105 hover:shadow-md"
+              >
+                Book a Free Webinar
+              </Link>
               <Link
                 to="/register"
                 className="px-5 py-2 bg-[#B81F77] text-white rounded-full font-semibold hover:bg-[#9F1A65] transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
               >
                 Register Now
               </Link>
+
+              
             </div>
           </div>
 

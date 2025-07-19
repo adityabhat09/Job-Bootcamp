@@ -9,6 +9,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+const Blog = require('./models/Blog'); // ✅ Add this line if you want to use Blog in server.js
+
+
 // ✅ INSERT FUNCTION HERE , optional can delete later
 const insertTestCourse = async () => {
   const exists = await Course.findOne({ slug: 'mern' });

@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 /* Animation speed & distance are variables so JS can edit them */
 @theme {
   --marquee-time: 60s;          /* adjust speed here */

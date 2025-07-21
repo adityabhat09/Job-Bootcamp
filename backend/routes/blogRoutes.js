@@ -52,4 +52,26 @@ router.delete('/:slug', async (req, res) => {
   }
 });
 
+
+// UPDATE blog by slug
+router.put('/:slug', async (req, res) => {
+  const { title, content, slug: newSlug } = req.body;
+
+  try {
+    const blog = await Blog.findOne({ slug: req.params.slug });
+    if (!blog) return res.status(404).json({ message: 'Blog not found' });
+
+    // Update fields if provided
+    if (title) blog.title = title;
+    if (content) blog.content = content;
+    if (newSlug) blog.slug = newSlug;
+
+    await blog.save();
+    res.json(blog);
+  } catch (err) {
+    res.status(500).json({ message: 'Failed to update blog', error: err.message });
+  }
+});
+
+
 module.exports = router;

@@ -12,12 +12,18 @@ const faqSchema = new mongoose.Schema({
 });
 
 const courseSchema = new mongoose.Schema({
-  slug: { type: String, required: true, unique: true },
-  name: String,
+  slug:     { type: String, required: true, unique: true },
+  name:     String,
   description: String,
-  fees: Number,
-  modules: [moduleSchema],
-  faqs: [faqSchema], // ✅ add this line
+  fees:     Number,
+  modules:  [moduleSchema],
+  faqs:     [faqSchema],
+
+  // ─── NEW META FIELDS ─────────────────────────────────────────────────────
+  metaTitle:       { type: String, default: '' },
+  metaDescription: { type: String, default: '' },
+  metaKeywords:    [String],  // e.g. ['mern','react','node']
 });
+
 
 module.exports = mongoose.model('Course', courseSchema);

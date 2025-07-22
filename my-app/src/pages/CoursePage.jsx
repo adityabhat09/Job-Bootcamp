@@ -10,6 +10,9 @@ import FAQAccordion from '../components/FAQAccordion';
 import BookWebinarModal from '../components/BookWebinarModal';
 import FloatingNav from '../components/FloatingNav';
 import ContactUs from '../components/ContactUs';
+// import {Helmet}
+import { Helmet } from 'react-helmet-async';
+
 
 const CoursePage = ({ onOpen }) => {
     const { slug } = useParams();
@@ -23,6 +26,38 @@ const CoursePage = ({ onOpen }) => {
             .then((res) => setCourse(res.data))
             .catch((err) => console.error('Error fetching course:', err));
     }, [slug]);
+
+    useEffect(() => {
+        if (!course) return;
+
+        // Update title
+        document.title = course.metaTitle || course.name;
+
+        // Meta Description
+        let descTag = document.querySelector('meta[name="description"]');
+        if (!descTag) {
+            descTag = document.createElement('meta');
+            descTag.setAttribute('name', 'description');
+            document.head.appendChild(descTag);
+        }
+        if (descTag) {
+            descTag.setAttribute('content', course.metaDescription || course.description || '');
+        }
+
+        // Meta Keywords
+        let keywordsTag = document.querySelector('meta[name="keywords"]');
+        if (!keywordsTag) {
+            keywordsTag = document.createElement('meta');
+            keywordsTag.setAttribute('name', 'keywords');
+            document.head.appendChild(keywordsTag);
+        }
+        if (keywordsTag) {
+            keywordsTag.setAttribute('content', (course.metaKeywords || []).join(','));
+        }
+
+    }, [course]);
+
+
 
     // Static data for the hero section features and stats
     const heroFeatures = [
@@ -62,6 +97,15 @@ const CoursePage = ({ onOpen }) => {
 
     return (
         <>
+            {course && (
+                <Helmet>
+                    <title>{course.metaTitle || course.name}</title>
+                    <meta name="description" content={course.metaDescription || course.description} />
+                    <meta name="keywords" content={(course.metaKeywords || []).join(',')} />
+                </Helmet>
+            )}
+
+
             {/* modal overlay sits above everything else */}
             <BookWebinarModal
                 isOpen={isModalOpen}
@@ -121,10 +165,10 @@ const CoursePage = ({ onOpen }) => {
                 <div className='py-5'></div>
                 <FloatingNav sections={sections} /> {/* --- sections are defined above in const sections --- */}
 
-                <section id="curriculum"></section>   {/* for floating nav scrolling */} 
-                <div className='py-10'></div>          
+                <section id="curriculum"></section>   {/* for floating nav scrolling */}
+                <div className='py-10'></div>
                 {/* Course Curriculum Accordion */}
-                <section  className=" py-4 bg-white">
+                <section className=" py-4 bg-white">
                     <div className="max-w-full mx-10 px-2 sm:px-6 lg:px-8">
                         <div className="text-left mb-12">
                             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 ">
@@ -225,7 +269,7 @@ const CoursePage = ({ onOpen }) => {
                 <section id="contact"></section>
                 <div className='py-5'></div>
                 {/* conatct us section */}
-                <ContactUs/>
+                <ContactUs />
 
             </div>
         </>

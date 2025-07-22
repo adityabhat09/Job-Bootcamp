@@ -27,7 +27,7 @@ res.status(500).json({ message: 'Server error' });
 // POST /api/courses
 router.post('/', async (req, res) => {
 try {
-const { name, slug, description, fees, modules, faqs } = req.body; // ✅ include faqs
+const { name, slug, description, fees, modules, faqs,metaTitle, metaDescription, metaKeywords } = req.body; // ✅ include faqs
 if (!name || !slug) {
   return res.status(400).json({ message: 'Course name and slug are required' });
 }
@@ -47,8 +47,12 @@ const newCourse = await Course.create({
   description: description?.trim() || '',
   fees,
   modules,
-  faqs: faqs || [], // ✅ set faqs if provided, else empty array
+  faqs: faqs || [],
+  metaTitle: metaTitle?.trim() || '',
+  metaDescription: metaDescription?.trim() || '',
+  metaKeywords: Array.isArray(metaKeywords) ? metaKeywords : []
 });
+
 
 res.status(201).json(newCourse);
 

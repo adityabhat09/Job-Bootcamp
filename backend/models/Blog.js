@@ -6,6 +6,9 @@ const blogSchema = new mongoose.Schema({
   content: { type: String, required: true },
   slug: { type: String, required: true, unique: true },
   createdAt: { type: Date, default: Date.now },
+  metaTitle: { type: String, default: '' },      // ← new
+  metaDescription: { type: String, default: '' },      // ← new
+  metaKeywords: { type: [String], default: [] },    // ← optional
 });
 
 // 2. Create and export model

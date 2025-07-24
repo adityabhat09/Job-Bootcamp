@@ -8,11 +8,13 @@ import BlogDetail from './pages/blogs/BlogDetail';
 import BlogList from './pages/blogs/BlogList';
 import ArticleList from './pages/articles/ArticleList';
 import ArticleDetail from './pages/articles/ArticleDetail';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <HelmetProvider> {/* ✅ Wrap entire app in HelmetProvider */}
       <Router>
+        <ScrollToTop />
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />

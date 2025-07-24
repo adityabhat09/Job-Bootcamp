@@ -32,7 +32,8 @@ router.post('/', async (req, res) => {
     slug,
     metaTitle,
     metaDescription,
-    metaKeywords
+    metaKeywords,
+    imageUrl 
   } = req.body;
 
   if (!title || !content || !slug) {
@@ -44,6 +45,7 @@ router.post('/', async (req, res) => {
       title,
       content,
       slug,
+      imageUrl ,
       metaTitle: metaTitle?.trim() || title,
       metaDescription: metaDescription?.trim() || content.slice(0, 160),
       metaKeywords: Array.isArray(metaKeywords) ? metaKeywords : []
@@ -73,7 +75,7 @@ router.put('/:slug', async (req, res) => {
     if (!blog) return res.status(404).json({ message: 'Blog not found' });
 
     // update only if provided
-    ['title','content','slug','metaTitle','metaDescription','metaKeywords'].forEach(field => {
+    ['title','content','slug','metaTitle','metaDescription','metaKeywords','imageUrl'].forEach(field => {
       if (req.body[field] !== undefined) {
         blog[field] = req.body[field];
       }

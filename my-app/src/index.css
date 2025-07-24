@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 
 /* Animation speed & distance are variables so JS can edit them */

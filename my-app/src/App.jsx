@@ -6,6 +6,8 @@ import CoursePage from './pages/CoursePage';
 import Footer from './pages/Footer';
 import BlogDetail from './pages/blogs/BlogDetail';
 import BlogList from './pages/blogs/BlogList';
+import ArticleList from './pages/articles/ArticleList';
+import ArticleDetail from './pages/articles/ArticleDetail';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route path="/courses/:slug" element={<CoursePage />} />
           <Route path="/blogs" element={<BlogList />} />
           <Route path="/blogs/:slug" element={<BlogDetail />} />
+          <Route path="/articles" element={<ArticleList />} />
+          <Route path="/articles/:slug" element={<ArticleDetail />} />
         </Routes>
         <Footer />
       </Router>

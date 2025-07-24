@@ -5,6 +5,7 @@ import { ChevronDown, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import BookWebinarModal from '../components/BookWebinarModal';
 
+
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);

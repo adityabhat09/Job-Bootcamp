@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import logo from '../images/logo.jpg';
+import logo from '../images/logo.png';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import BookWebinarModal from '../components/BookWebinarModal';

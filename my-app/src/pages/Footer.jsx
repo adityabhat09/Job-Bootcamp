@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { Facebook, Twitter, Linkedin, Instagram, MapPin } from 'lucide-react';
-import logo from '../images/logo.jpg'
+import logo from '../images/logo.png'
 import { HashLink } from 'react-router-hash-link';
 import BookWebinarModal from '../components/BookWebinarModal';
 

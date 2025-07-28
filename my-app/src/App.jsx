@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async'; // <-- ✅ Import this
+// import { HelmetProvider } from 'react-helmet-async'; // <-- ✅ Import this
 import Navbar from './pages/Navbar';
 import HomePage from './pages/home/HomePage';
 import CoursePage from './pages/CoursePage';
@@ -12,7 +12,7 @@ import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
-    <HelmetProvider> {/* ✅ Wrap entire app in HelmetProvider */}
+    // <HelmetProvider> {/* ✅ Wrap entire app in HelmetProvider */}
       <Router>
         <ScrollToTop />
         <Navbar />
@@ -26,7 +26,7 @@ function App() {
         </Routes>
         <Footer />
       </Router>
-    </HelmetProvider>
+    // </HelmetProvider>
   );
 }
 

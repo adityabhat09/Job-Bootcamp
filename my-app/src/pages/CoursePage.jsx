@@ -11,7 +11,7 @@ import BookWebinarModal from '../components/BookWebinarModal';
 import FloatingNav from '../components/FloatingNav';
 import ContactUs from '../components/ContactUs';
 // import {Helmet}
-import { Helmet } from 'react-helmet-async';
+// import { Helmet } from 'react-helmet-async';
 
 
 const CoursePage = ({ onOpen }) => {
@@ -97,13 +97,13 @@ const CoursePage = ({ onOpen }) => {
 
     return (
         <>
-            {course && (
+            {/* {course && (
                 <Helmet>
                     <title>{course.metaTitle || course.name}</title>
                     <meta name="description" content={course.metaDescription || course.description} />
                     <meta name="keywords" content={(course.metaKeywords || []).join(',')} />
                 </Helmet>
-            )}
+            )} */}
 
 
             {/* modal overlay sits above everything else */}

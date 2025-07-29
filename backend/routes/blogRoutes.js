@@ -3,12 +3,31 @@ const router = express.Router();
 const Blog = require('../models/Blog');
 
 // GET all blogs
+// GET all blogs with pagination
 router.get('/', async (req, res) => {
+  // Get page and limit from query, with default values
+  const page = parseInt(req.query.page) || 1;
+  const limit = parseInt(req.query.limit) || 9;
+  const skip = (page - 1) * limit;
+
   try {
-    const blogs = await Blog.find().sort({ createdAt: -1 });
-    res.json(blogs);
+    // Get the total number of blogs to calculate total pages
+    const totalBlogs = await Blog.countDocuments();
+
+    // Fetch only the blogs for the current page
+    const blogs = await Blog.find()
+      .sort({ createdAt: -1 }) // Keep the sort order
+      .limit(limit)
+      .skip(skip);
+
+    // Send the paginated data and page info
+    res.json({
+      blogs: blogs,
+      currentPage: page,
+      totalPages: Math.ceil(totalBlogs / limit),
+    });
   } catch (err) {
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: 'Server error', error: err.message });
   }
 });
 

@@ -4,6 +4,36 @@ import axios from 'axios';
 import DottedBackground from '../../components/DottedBackground';
 
 export default function BlogList() {
+  useEffect(() => {
+      // --- SEO Meta Tags ---
+  
+      // 1. Set Meta Title
+      document.title = 'Tech Blogs 2025: Web Development, Data Analytics & JS Trends | Just Career';
+  
+      // 2. Set Meta Description
+      const metaDescription = document.createElement('meta');
+      metaDescription.name = 'description';
+      metaDescription.content = 'Explore the latest insights on modern web development. Read expert articles on Node.js vs. Deno, MERN vs. MEAN, Tailwind vs. Bootstrap, and the latest trends in React and Data Analytics for 2025.';
+      document.head.appendChild(metaDescription);
+  
+      // 3. Set Meta Keywords
+      const metaKeywords = document.createElement('meta');
+      metaKeywords.name = 'keywords';
+      metaKeywords.content = 'web development blog, tech tutorials, server-side javascript, Node.js, Deno, CSS frameworks, Tailwind CSS, Bootstrap, data analytics, Polars, Pandas, MERN stack, MEAN stack, React state management, Redux, Zustand, React Hooks, React Router, full-stack development, 2025 tech trends';
+      document.head.appendChild(metaKeywords);
+  
+      // Cleanup function to remove the meta tags when the component unmounts
+      return () => {
+        document.head.removeChild(metaDescription);
+        document.head.removeChild(metaKeywords);
+      };
+    }, []); // 
+
+
+
+
+
+
   // 1. Add state for pagination, loading, and errors
   const [blogs, setBlogs] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import logo from '../images/logo.png';
+
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import BookWebinarModal from '../components/BookWebinarModal';
@@ -74,7 +74,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0 pl-4 lg:pl-10"> {/* ✅ Changed md: to lg: */}
             <Link to="/" onClick={closeAllMenus}>
-              <img src={logo} alt="JustAcademy Logo" className="h-10 w-auto" />
+              <img src="/logo.png" alt="JustAcademy Logo" className="h-10 w-auto" />
             </Link>
           </div>
 

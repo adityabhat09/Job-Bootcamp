@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { Facebook, Twitter, Linkedin, Instagram, MapPin } from 'lucide-react';
-import logo from '../images/logo.png'
+// import logo from '../images/logo.png'
 import { HashLink } from 'react-router-hash-link';
 import BookWebinarModal from '../components/BookWebinarModal';
 
@@ -49,7 +49,7 @@ const Footer = () => {
                         <div className="col-span-1">
                             <div className="h-12 mb-4 flex items-center justify-center">
                                 {/* Add your <img src="/logo.png" alt="JustAcademy Logo" /> here */}
-                                <img src={logo} alt='justacademy logo' className='h-10  lg:h-14 w-auto' />
+                                <img src="/logo.png" alt='justacademy logo' className='h-10  lg:h-14 w-auto' />
                             </div>
                             <p className="text-gray-400">
                                 Master in-demand tech skills with our expert-led bootcamps.

@@ -86,31 +86,31 @@ export default function BlogList() {
             </div>
 
             {/* 5. Add Pagination Controls UI */}
-            
-              
-              <div className="flex justify-center items-center space-x-6 mt-12">
-                <button
-                  onClick={handlePrevPage}
-                  disabled={currentPage === 1}
-                  className=" w-[7rem] px-4 py-2 bg-white text-gray-700 font-semibold rounded-lg shadow-md hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                >
-                  ← Previous
-                </button>
 
-                <span className="text-gray-800 font-medium">
-                  Page {currentPage} of {totalPages}
-                </span>
 
-                <button
-                  onClick={handleNextPage}
-                  disabled={currentPage === totalPages}
-                  className="w-[7rem] px-4 py-2 bg-white text-gray-700 font-semibold rounded-lg shadow-md hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                >
-                  Next →
-                </button>
-              </div>
-              
-            
+            <div className="flex justify-center items-center space-x-6 mt-12">
+              <button
+                onClick={handlePrevPage}
+                disabled={currentPage === 1}
+                className=" w-[2-vw] px-4 py-2 bg-white text-gray-700 font-semibold rounded-lg shadow-md hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              >
+                ← Previous
+              </button>
+
+              <span className="text-gray-800 font-medium">
+                Page {currentPage} of {totalPages}
+              </span>
+
+              <button
+                onClick={handleNextPage}
+                disabled={currentPage === totalPages}
+                className="w-[2-vw] px-4 py-2 bg-white text-gray-700 font-semibold rounded-lg shadow-md hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              >
+                Next →
+              </button>
+            </div>
+
+
           </>
         )}
       </div>

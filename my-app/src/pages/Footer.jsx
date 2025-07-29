@@ -8,12 +8,14 @@ import BookWebinarModal from '../components/BookWebinarModal';
 const Footer = () => {
     // Replace with your actual social media profile URLs
     const socialLinks = {
-        facebook: 'https://facebook.com/your-profile',
-        twitter: 'https://twitter.com/your-profile',
-        linkedin: 'https://linkedin.com/in/your-profile',
-        instagram: 'https://instagram.com/your-profile',
-        googleMaps: 'http://googleusercontent.com/maps.google.com/2'
-    };
+  facebook: "https://www.facebook.com/JustAcademyIN/",
+  twitter: "https://x.com/justacademy23",
+  linkedin: "https://www.linkedin.com/company/justacademy/",
+  instagram: "https://www.instagram.com/justacademyin/",
+  googleMaps:
+    "https://www.google.com/maps/place/JustAcademy/@19.2796842,72.8833987,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7b706aaaaaaa9:0x1c753433af032d39!8m2!3d19.2796842!4d72.8833987!16s%2Fg%2F11g65dw1pf?entry=ttu&g_ep=EgoyMDI1MDcyMy4wIKXMDSoASAFQAw%3D%3D",
+};
+
 
     const [isModalOpen, setModalOpen] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState(false);

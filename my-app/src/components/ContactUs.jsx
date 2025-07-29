@@ -18,6 +18,8 @@ import {
     Linkedin
 } from 'lucide-react';
 import DottedBackground from './DottedBackground';
+import ReCAPTCHA from 'react-google-recaptcha';
+
 
 // A simple component for each contact detail card
 const InfoCard = ({ icon, title, children }) => (
@@ -91,9 +93,19 @@ const ContactUs = () => {
         }
     };
 
+    //captcha 
+    const [captchaToken, setCaptchaToken] = useState(null);
+    const handleCaptcha = (token) => {
+        setCaptchaToken(token);
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!validate()) {
+            return;
+        }
+        if (!captchaToken) {     //captcha logic
+            alert('Please complete the CAPTCHA');
             return;
         }
 
@@ -102,6 +114,7 @@ const ContactUs = () => {
             setStatus('error');
             return;
         }
+
 
         setStatus('sending');
 
@@ -225,7 +238,16 @@ const ContactUs = () => {
                                     ></textarea>
                                 </div>
                                 {errors.message && <p className="mt-1 text-xs text-red-500">{errors.message}</p>}
+                                <div className='flex justify-center pt-6'>
+                                    <div >
+                                    <ReCAPTCHA 
+                                        sitekey="6Lf9-5IrAAAAAPBckCr_YscQUD0DLLxxfJdp9IiZ" // replace this with your actual site key
+                                        onChange={handleCaptcha}
+                                    />
+                                    </div>
+                                </div>
                             </div>
+                            
 
                             {/* Submit Button & Status Message */}
                             <div className="sm:col-span-2 flex flex-col items-center">

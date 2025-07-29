@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { CheckCircle, Send, Loader, AlertTriangle } from 'lucide-react';
 import DottedBackground from '../../components/DottedBackground';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 // This is a placeholder for your DottedBackground component.
 // Make sure this file exists in the correct directory.
@@ -46,16 +47,32 @@ const Hero = () => {
         return Object.keys(tempErrors).length === 0;
     };
 
+    
+
+
     // --- Input Change Handler ---
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
 
+
+
+    // captcha cheeze
+    const [captchaToken, setCaptchaToken] = useState(null);
+    const handleCaptcha = (token) => {
+        setCaptchaToken(token);
+    };
+
     // --- Form Submission Handler ---
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!validate()) {
+            return;
+        }
+        
+        if (!captchaToken) {     //captcha logic
+            alert('Please complete the CAPTCHA');
             return;
         }
 
@@ -185,8 +202,17 @@ const Hero = () => {
                                     onChange={handleChange} // Handle changes
                                     className={`w-full p-4 border rounded-lg placeholder-gray-400 text-base resize-none ${errors.message ? 'border-red-500' : 'border-gray-300'}`}
                                 ></textarea>
+                                <div className='flex justify-center pt-6'>
+                                    <div >
+                                    <ReCAPTCHA 
+                                        sitekey="6Lf9-5IrAAAAAPBckCr_YscQUD0DLLxxfJdp9IiZ" // replace this with your actual site key
+                                        onChange={handleCaptcha}
+                                    />
+                                    </div>
+                                </div>
                                 {errors.message && <p className="mt-1 text-xs text-red-500">{errors.message}</p>}
                             </div>
+
 
                             {/* Submit Button */}
                             <button

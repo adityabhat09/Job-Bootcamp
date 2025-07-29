@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 export default function BookWebinarModal({ isOpen, onClose }) {
     const form = useRef();
@@ -19,8 +20,18 @@ export default function BookWebinarModal({ isOpen, onClose }) {
         }));
     };
 
+    //captcha 
+    const [captchaToken, setCaptchaToken] = useState(null);
+        const handleCaptcha = (token) => {
+            setCaptchaToken(token);
+        };
+
     const sendEmail = (e) => {
         e.preventDefault(); // Prevents the default form submission behavior (page reload)
+         if (!captchaToken) {     //captcha logic
+            alert('Please complete the CAPTCHA');
+            return;
+        }
         setIsSending(true);
 
         emailjs.sendForm(
@@ -121,6 +132,15 @@ export default function BookWebinarModal({ isOpen, onClose }) {
                         name="message" // Matches {{message}} in your template
                         value={formData.message}
                     />
+
+                    <div className='flex justify-center '>
+                                    <div >
+                                    <ReCAPTCHA 
+                                        sitekey="6Lf9-5IrAAAAAPBckCr_YscQUD0DLLxxfJdp9IiZ" // replace this with your actual site key
+                                        onChange={handleCaptcha}
+                                    />
+                                    </div>
+                                </div>
 
                     {/* Submit Button */}
                     <button

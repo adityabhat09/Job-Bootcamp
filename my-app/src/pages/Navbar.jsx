@@ -70,7 +70,7 @@ const Navbar = () => {
       />
 
       <nav className="bg-white shadow-lg fixed top-0 left-0 w-full z-50 border-b-2 border-emerald-500">
-        <div className="container mx-auto px-4 py-6 flex items-center justify-between">
+        <div className="container mx-auto px-4 py-5 flex items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0 pl-4 lg:pl-10"> {/* ✅ Changed md: to lg: */}
             <Link to="/" onClick={closeAllMenus}>

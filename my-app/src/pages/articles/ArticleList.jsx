@@ -5,12 +5,39 @@ import DottedBackground from '../../components/DottedBackground';
 
 export default function ArticleList() {
   const [articles, setArticles] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const articlesPerPage = 9;
 
   useEffect(() => {
-    axios.get('/api/articles')
-      .then(res => setArticles(res.data))
-      .catch(err => console.error("Failed to fetch articles:", err));
-  }, []);
+    const fetchArticles = async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        const res = await axios.get(`/api/articles?page=${currentPage}&limit=${articlesPerPage}`);
+        setArticles(res.data.articles);
+        setTotalPages(res.data.totalPages);
+      } catch (err) {
+        console.error("Failed to fetch articles:", err);
+        setError("Failed to load articles. Please try again.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchArticles();
+  }, [currentPage]);
+
+  const handleNextPage = () => {
+    setCurrentPage(prev => Math.min(prev + 1, totalPages));
+  };
+
+  const handlePrevPage = () => {
+    setCurrentPage(prev => Math.max(prev - 1, 1));
+  };
 
   return (
     <div className="bg-gray-50 min-h-screen">
@@ -24,23 +51,58 @@ export default function ArticleList() {
           </p>
         </DottedBackground>
 
-        <div className="grid gap-10 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 max-w-full px-4 sm:px-6 lg:px-8 mx-auto">
-          {articles.map(article => (
-            <Link to={`/articles/${article.slug}`} key={article._id} className="block group">
-              <div className="bg-white p-8 rounded-2xl shadow-lg group-hover:shadow-2xl group-hover:-translate-y-2 transform transition-all duration-300 h-full flex flex-col">
-                <h2 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-emerald-600 transition-colors duration-300">
-                  {article.title}
-                </h2>
-                <p className="text-gray-600 leading-relaxed flex-grow">
-                  {article.content.slice(0, 120)}...
-                </p>
-                <span className="text-emerald-600 font-semibold mt-4 inline-block">
-                  Read More →
+        {loading ? (
+          <div className="text-center py-10">
+            <p className="text-xl text-gray-700">Loading articles...</p>
+          </div>
+        ) : error ? (
+          <div className="text-center py-10">
+            <p className="text-xl text-red-600">{error}</p>
+          </div>
+        ) : (
+          <>
+            <div className="grid gap-10 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto">
+              {articles.map(article => (
+                <Link to={`/articles/${article.slug}`} key={article._id} className="block group">
+                  <div className="bg-white p-8 rounded-2xl shadow-lg group-hover:shadow-2xl group-hover:-translate-y-2 transform transition-all duration-300 h-full flex flex-col">
+                    <h2 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-emerald-600 transition-colors duration-300">
+                      {article.title}
+                    </h2>
+                    <p className="text-gray-600 leading-relaxed flex-grow">
+                      {article.content.slice(0, 120)}...
+                    </p>
+                    <span className="text-emerald-600 font-semibold mt-4 inline-block">
+                      Read More →
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            {/* Pagination Controls */}
+            <div className="flex justify-center items-center space-x-6 mt-12">
+                <button
+                  onClick={handlePrevPage}
+                  disabled={currentPage === 1}
+                  className="w-[8vw] px-4 py-2 bg-white text-gray-700 font-semibold rounded-lg shadow-md hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                >
+                  ← Previous
+                </button>
+
+                <span className="text-gray-800 font-medium">
+                  Page {currentPage} of {totalPages}
                 </span>
-              </div>
-            </Link>
-          ))}
-        </div>
+
+                <button
+                  onClick={handleNextPage}
+                  disabled={currentPage === totalPages}
+                  className="w-[8vw] px-4 py-2 bg-white text-gray-700 font-semibold rounded-lg shadow-md hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                >
+                  Next →
+                </button>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

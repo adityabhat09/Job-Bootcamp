@@ -4,14 +4,34 @@ const router = express.Router();
 const Article = require('../models/Article')
 
 // GET all articles
+// GET all articles with pagination
 router.get('/', async (req, res) => {
+  // Get page and limit from query, with default values
+  const page = parseInt(req.query.page) || 1;
+  const limit = parseInt(req.query.limit) || 9;
+  const skip = (page - 1) * limit;
+
   try {
-    const articles = await Article.find().sort({ createdAt: -1 });
-    res.json(articles);
+    // Get the total number of articles to calculate total pages
+    const totalArticles = await Article.countDocuments();
+
+    // Fetch only the articles for the current page
+    const articles = await Article.find()
+      .sort({ createdAt: -1 })
+      .limit(limit)
+      .skip(skip);
+
+    // Send the paginated data and page info
+    res.json({
+      articles: articles,
+      currentPage: page,
+      totalPages: Math.ceil(totalArticles / limit),
+    });
   } catch (err) {
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: 'Server error', error: err.message });
   }
 });
+
 
 // GET article by slug
 router.get('/:slug', async (req, res) => {

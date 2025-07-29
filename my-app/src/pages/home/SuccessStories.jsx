@@ -6,60 +6,61 @@ import success3 from '../../images/success3.jpg';
 import success4 from '../../images/success4.jpg';
 import success5 from '../../images/success5.jpg';
 import success6 from '../../images/success6.jpg';
+import success7 from '../../images/success7.jpg'
 
 const SuccessStories = () => {
     // Success stories data
     const stories = [
         {
             id: 1,
-            name: "Abhay Singh",
-            course: "Flutter App Development",
+            name: "Swati Inje",
+            course: "MEAN Stack Development",
             date: "Dec, 2023",
-            testimonial: " I recently completed the Flutter course, and overall, it was a valuable learning experience.The course content was... ",
-            link: "https://www.justacademy.co/success-detail/abhay-singh",
+            testimonial: " The practical projects were especially helpful since they enabled me to use what I had learned in.... ",
+            link: "https://www.justacademy.co/success-detail/swati-inje",
             company: "Amazon",
             image: success1,
         },
-        {
-            id: 2,
-            name: "Tinku Yadav",
-            course: "Flutter App Development",
-            date: "Dec, 2023",
-            testimonial: "One of the best decisions I've ever made for my profession is to enroll in the JustAcademy Flutter App...",
-            link: "https://www.justacademy.co/success-detail/tinku-yadav",
-            company: "Microsoft",
-            image: success2,
-        },
-        {
-            id: 3,
-            name: "Bharat",
-            course: "Flutter App Development",
-            date: "Dec, 2023",
-            testimonial: "I am beyond impressed with the quality of education and the overall learning experience. The course...",
-            link: "https://www.justacademy.co/success-detail/bharat",
-            company: "Ola",
-            image: success3,
-        },
-        {
-            id: 4,
-            name: "Deepa Shetty",
-            course: "Python",
-            date: "Dec, 2023",
-            testimonial: "Avinash Shukla, our instructor, demonstrated a profound understanding of Python and its applications...",
-            link: "https://www.justacademy.co/success-detail/deepa-shetty",
-            company: "Google",
-            image: success4,
-        },
-        {
-            id: 5,
-            name: "Shalini Maurya",
-            course: "Android App Development",
-            date: "Dec, 2023",
-            testimonial: "What sets JustAcademy apart is its commitment to excellence. The support from Tejas Gupta and the...",
-            link: "https://www.justacademy.co/success-detail/shalini-maurya",
-            company: "Flipkart",
-            image: success5,
-        },
+        // {
+        //     id: 2,
+        //     name: "Tinku Yadav",
+        //     course: "Flutter App Development",
+        //     date: "Dec, 2023",
+        //     testimonial: "One of the best decisions I've ever made for my profession is to enroll in the JustAcademy Flutter App...",
+        //     link: "https://www.justacademy.co/success-detail/tinku-yadav",
+        //     company: "Microsoft",
+        //     image: success2,
+        // },
+        // {
+        //     id: 3,
+        //     name: "Bharat",
+        //     course: "Flutter App Development",
+        //     date: "Dec, 2023",
+        //     testimonial: "I am beyond impressed with the quality of education and the overall learning experience. The course...",
+        //     link: "https://www.justacademy.co/success-detail/bharat",
+        //     company: "Ola",
+        //     image: success3,
+        // },
+        // {
+        //     id: 4,
+        //     name: "Deepa Shetty",
+        //     course: "Python",
+        //     date: "Dec, 2023",
+        //     testimonial: "Avinash Shukla, our instructor, demonstrated a profound understanding of Python and its applications...",
+        //     link: "https://www.justacademy.co/success-detail/deepa-shetty",
+        //     company: "Google",
+        //     image: success4,
+        // },
+        // {
+        //     id: 5,
+        //     name: "Shalini Maurya",
+        //     course: "Android App Development",
+        //     date: "Dec, 2023",
+        //     testimonial: "What sets JustAcademy apart is its commitment to excellence. The support from Tejas Gupta and the...",
+        //     link: "https://www.justacademy.co/success-detail/shalini-maurya",
+        //     company: "Flipkart",
+        //     image: success5,
+        // },
         {
             id: 6,
             name: "Sagar Mane",
@@ -69,6 +70,16 @@ const SuccessStories = () => {
             link: "https://www.justacademy.co/success-detail/sagar-mane",
             company: "Netflix",
             image: success6,
+        },
+        {
+            id: 7,
+            name: "Aditya Bhat",
+            course: "React JS",
+            date: "Dec, 2023",
+            testimonial: "If you’re looking to dive into frontend development, I highly recommend the React Js course at JustAcademy... ",
+            link: "https://www.justacademy.co/success-detail/sagar-mane",
+            company: "Netflix",
+            image: success7,
         }
     ];
 

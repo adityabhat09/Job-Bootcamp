@@ -15,7 +15,7 @@ const FAQAccordion = ({ faqs }) => {
             <div className="max-w-full mx-10 px-2 sm:px-6 lg:px-8">
                 <div className="text-left mb-12">
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-                        Frequently Asked <span className="text-[#C63687]">Questions</span>
+                        Frequently Asked <span className="text-emerald-700 ">Questions</span>
                     </h2>
                     <p className="text-base sm:text-lg text-gray-600 max-w-3xl">
                         Here are some common questions students ask about this bootcamp.
@@ -35,7 +35,7 @@ const FAQAccordion = ({ faqs }) => {
                                     {faq.question}
                                 </h3>
                                 <ChevronDown
-                                    className={`w-5 h-5 text-[#C63687] transform transition-transform duration-200 ${openIndex === idx ? 'rotate-180' : ''
+                                    className={`w-5 h-5 text-emerald-700 transform transition-transform duration-200 ${openIndex === idx ? 'rotate-180' : ''
                                         }`}
                                 />
                             </button>

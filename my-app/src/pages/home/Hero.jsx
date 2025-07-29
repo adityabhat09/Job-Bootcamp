@@ -92,7 +92,7 @@ const Hero = () => {
                 {/* Left Column */}
                 <div className="w-full md:w-1/2 h-full flex items-center justify-center px-6 md:px-12">
                     <div className="max-w-3xl text-left space-y-8">
-                        <p className="text-pink-400 font-medium text-lg">Restricted by opportunities?</p>
+                        <p className="text-emerald-500 font-medium text-lg">Restricted by opportunities?</p>
 
                         <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
                             Get the tech career<br />you deserve. <span className="text-white/90">Faster.</span>
@@ -101,19 +101,19 @@ const Hero = () => {
                         {/* Points Section */}
                         <div className="space-y-6 pt-8">
                             <div className="flex items-start gap-6 bg-white/5 px-6 py-8 rounded-xl">
-                                <CheckCircle className="text-pink-400 w-6 h-6 mt-1 flex-shrink-0" />
+                                <CheckCircle className="text-emerald-500 w-6 h-6 mt-1 flex-shrink-0" />
                                 <p className="text-white text-lg">
                                     <span className="font-semibold">128% average hike</span> via our placement cell
                                 </p>
                             </div>
                             <div className="flex items-start gap-6 bg-white/5 px-6 py-8 rounded-xl">
-                                <CheckCircle className="text-pink-400 w-6 h-6 mt-1 flex-shrink-0" />
+                                <CheckCircle className="text-emerald-500 w-6 h-6 mt-1 flex-shrink-0" />
                                 <p className="text-white text-lg">
                                     <span className="font-semibold">1.5 Lac+ learners</span> cracked top tech companies
                                 </p>
                             </div>
                             <div className="flex items-start gap-6 bg-white/5 px-6 py-8 rounded-xl">
-                                <CheckCircle className="text-pink-400 w-6 h-6 mt-1 flex-shrink-0" />
+                                <CheckCircle className="text-emerald-500 w-6 h-6 mt-1 flex-shrink-0" />
                                 <p className="text-white text-lg">
                                     <span className="font-semibold">1,400+ alumni in MAANG</span> & 103 unicorn startups
                                 </p>
@@ -134,7 +134,7 @@ const Hero = () => {
 
                             {/* Name Field */}
                             <div className="mb-6">
-                                <label className="block text-base font-medium text-[#B51D74] mb-3">Name</label>
+                                <label className="block text-base font-medium text-emerald-700 mb-3">Name</label>
                                 <input
                                     type="text"
                                     name="name" // Added name attribute
@@ -148,7 +148,7 @@ const Hero = () => {
 
                             {/* Phone Number Field */}
                             <div className="mb-6">
-                                <label className="block text-base font-medium text-[#B51D74] mb-3">Phone Number</label>
+                                <label className="block text-base font-medium text-emerald-700 mb-3">Phone Number</label>
                                 <input
                                     type="tel"
                                     name="phone" // Added name attribute
@@ -162,7 +162,7 @@ const Hero = () => {
 
                             {/* Email Field */}
                             <div className="mb-6">
-                                <label className="block text-base font-medium text-[#B51D74] mb-3">Email</label>
+                                <label className="block text-base font-medium text-emerald-700 mb-3">Email</label>
                                 <input
                                     type="email"
                                     name="email" // Added name attribute
@@ -176,7 +176,7 @@ const Hero = () => {
 
                             {/* Message Field */}
                             <div className="mb-8">
-                                <label className="block text-base font-medium text-[#B51D74] mb-3">Message</label>
+                                <label className="block text-base font-medium text-emerald-700 mb-3">Message</label>
                                 <textarea
                                     name="message" // Added name attribute
                                     placeholder="Enter your message"
@@ -192,7 +192,7 @@ const Hero = () => {
                             <button
                                 type="submit"
                                 disabled={status === 'sending'}
-                                className="w-full bg-[#B81F77] hover:bg-[#9F1A65] text-white font-semibold py-4 px-8 rounded-lg transition-colors text-lg flex items-center justify-center disabled:bg-gray-400 disabled:cursor-not-allowed"
+                                className="w-full bg-emerald-600 hover:bg-emerald-900 text-white font-semibold py-4 px-8 rounded-lg transition-colors text-lg flex items-center justify-center disabled:bg-gray-400 disabled:cursor-not-allowed"
                             >
                                 {status === 'sending' ? (
                                     <>

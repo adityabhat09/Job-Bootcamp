@@ -48,8 +48,8 @@ export default function FloatingNav({ sections }) {
                         className={
                             `whitespace-nowrap px-4 py-2 rounded-xl transition-colors font-medium ` +
                             (active === id
-                                ? 'bg-[#B51C72] text-white'
-                                : 'text-gray-600 hover:text-[#B51C72]')
+                                ? 'bg-emerald-600 text-white'
+                                : 'text-gray-600 hover:text-emerald-600')
                         }
                     >
                         {label}

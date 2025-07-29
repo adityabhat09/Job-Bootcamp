@@ -78,16 +78,16 @@ const SuccessStories = () => {
                 {/* Section Header */}
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
-                        <span className="text-[#B51D74]">Success</span> Stories
+                        <span className="text-emerald-600">Success</span> Stories
                     </h2>
-                    <div className="w-24 h-1 bg-[#B51D74] mx-auto mb-6"></div>
+                    <div className="w-24 h-1 bg-emerald-600 mx-auto mb-6"></div>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                         Hear from our alumni who transformed their careers and achieved their dream roles in top tech companies
                     </p>
                 </div>
 
                 {/* Stats Banner */}
-                <div className="bg-gradient-to-r from-[#B51D74] to-[#8a1556] rounded-2xl p-6 mb-16 flex flex-col md:flex-row justify-around items-center shadow-lg">
+                <div className="bg-gradient-to-r from-emerald-500 to-emerald-900 rounded-2xl p-6 mb-16 flex flex-col md:flex-row justify-around items-center shadow-lg">
                     <div className="text-center mb-6 md:mb-0">
                         <div className="text-4xl font-bold text-white">100%</div>
                         <p className="text-gray-100">Project based Learning</p>
@@ -112,7 +112,7 @@ const SuccessStories = () => {
                             {/* Certificate Photo */}
                             <div className="relative h-auto bg-gradient-to-r  flex items-center justify-center px-2 py-2 ">
                                 <div className="   w-full h-56 bg-white rounded-lg shadow-lg flex items-center justify-center">
-                                    {/* <div className="w-full h-52 bg-gradient-to-r from-[#B51D74] to-[#8a1556] rounded-lg flex items-center justify-center text-white text-4xl font-bold"> */}
+                                    {/* <div className="w-full h-52 bg-gradient-to-r from-emerald-600 to-[#8a1556] rounded-lg flex items-center justify-center text-white text-4xl font-bold"> */}
                                     <img src={story.image} alt={story.name} className="w-full h-full object-cover rounded-lg" />
                                     {/* </div> */}
                                 </div>
@@ -122,20 +122,20 @@ const SuccessStories = () => {
                             {/* Student Info */}
                             <div className="p-6 pt-4 relative flex flex-col flex-1">
                                 {/* <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center">
-                  <div className="w-14 h-14 bg-[#B51D74] rounded-full flex items-center justify-center">
+                  <div className="w-14 h-14 bg-emerald-600 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold">{story.company.charAt(0)}</span>
                   </div>
                 </div> */}
 
                                 <div className="text-center mb-4">
                                     <h3 className="text-2xl font-bold text-gray-900">{story.name}</h3>
-                                    <p className="text-[#B51D74] font-semibold">{story.course}</p>
+                                    <p className="text-emerald-600 font-semibold">{story.course}</p>
                                     <p className="text-gray-500 text-sm mt-1">{story.date}</p>
                                 </div>
 
                                 {/* Testimonial Excerpt */}
-                                <div className="relative my-6 p-4 bg-gray-50 rounded-lg border-l-4 border-[#B51D74]">
-                                    {/* <div className="absolute -top-4 left-4 text-[#B51D74] text-3xl">“</div> */}
+                                <div className="relative my-6 p-4 bg-gray-50 rounded-lg border-l-4 border-emerald-600">
+                                    {/* <div className="absolute -top-4 left-4 text-emerald-600 text-3xl">“</div> */}
                                     <p className="text-gray-700">
                                         {story.testimonial}
                                     </p>
@@ -145,7 +145,7 @@ const SuccessStories = () => {
                                 <div className="mt-auto pt-6 text-center">
                                     <a
                                         href={story.link}
-                                        className="inline-block bg-white border-2 border-[#B51D74] text-[#B51D74] hover:bg-[#B51D74] hover:text-white font-medium py-2 px-6 rounded-full transition-all duration-300"
+                                        className="inline-block bg-white border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-600 hover:text-white font-medium py-2 px-6 rounded-full transition-all duration-300"
                                     >
                                         Read Full Story
                                     </a>
@@ -160,14 +160,14 @@ const SuccessStories = () => {
                     <div className="flex flex-wrap justify-center gap-4">
                         <a
                             href="https://www.justacademy.co/success"
-                            className="basis-full md:basis-[calc(50%-0.5rem)] bg-[#B51D74] hover:bg-[#9e1964] text-white font-bold py-4 px-4 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-center"
+                            className="basis-full md:basis-[calc(50%-0.5rem)] bg-emerald-600 hover:bg-emerald-900 text-white font-bold py-4 px-4 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-center"
                         >
                             View All Success Stories
                         </a>
 
                         <a
                             href="https://www.justacademy.co/student-placed"
-                            className="basis-full md:basis-[calc(50%-0.5rem)] bg-[#B51D74] hover:bg-[#9e1964] text-white font-bold py-4 px-4 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-center"
+                            className="basis-full md:basis-[calc(50%-0.5rem)] bg-emerald-600 hover:bg-emerald-900 text-white font-bold py-4 px-4 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-center"
                         >
                             View Placements
                         </a>

@@ -39,7 +39,7 @@ const Footer = () => {
                 onClose={() => setModalOpen(false)}
             />
 
-            <footer className="bg-gray-900 text-white pt-12 pb-8 border-t-2 border-[#B81F77]">
+            <footer className="bg-gray-900 text-white pt-12 pb-8 border-t-2 border-emerald-600">
                 <div className="container mx-auto px-6">
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
 
@@ -47,7 +47,7 @@ const Footer = () => {
                         <div className="col-span-1">
                             <div className="h-12 mb-4 flex items-center justify-center">
                                 {/* Add your <img src="/logo.png" alt="JustAcademy Logo" /> here */}
-                                <img src={logo} alt='justacademy logo' className='h-12  lg:h-16 w-auto' />
+                                <img src={logo} alt='justacademy logo' className='h-10  lg:h-14 w-auto' />
                             </div>
                             <p className="text-gray-400">
                                 Master in-demand tech skills with our expert-led bootcamps.
@@ -58,20 +58,20 @@ const Footer = () => {
                         <div>
                             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
                             <ul>
-                                <li className="mb-2"><a href="/" className="hover:text-pink-600">Home</a></li>
+                                <li className="mb-2"><a href="/" className="hover:text-emerald-500">Home</a></li>
 
                                 <li className="mb-2"><a href='#' onClick={(e) => {
                                     e.preventDefault(); // stop navigation
                                     setModalOpen(true); // open modal
-                                }} className="hover:text-pink-600">Book a Free Webinar</a></li>
+                                }} className="hover:text-emerald-500">Book a Free Webinar</a></li>
 
                                 <li className="mb-2">
-  <a href="#" onClick={handleBookWebinarClick} className="hover:text-pink-600">
+  <a href="#" onClick={handleBookWebinarClick} className="hover:text-emerald-500">
     Register Now
   </a>
 </li>
 
-                                <li className="mb-2"><a href="#contact" className="hover:text-pink-600">Contact Us</a></li>
+                                <li className="mb-2"><a href="#contact" className="hover:text-emerald-500">Contact Us</a></li>
                             </ul>
                         </div>
 
@@ -79,9 +79,9 @@ const Footer = () => {
                         <div>
                             <h3 className="text-lg font-semibold mb-4">Popular Bootcamps</h3>
                             <ul>
-                                <li className="mb-2"><a href="/courses/mean" className="hover:text-pink-600">MEAN Stack</a></li>
-                                <li className="mb-2"><a href="/courses/mern" className="hover:text-pink-600">MERN Stack</a></li>
-                                <li className="mb-2"><a href="/courses/data-analytics" className="hover:text-pink-600">Data Analytics</a></li>
+                                <li className="mb-2"><a href="/courses/mean" className="hover:text-emerald-500">MEAN Stack</a></li>
+                                <li className="mb-2"><a href="/courses/mern" className="hover:text-emerald-500">MERN Stack</a></li>
+                                <li className="mb-2"><a href="/courses/data-analytics" className="hover:text-emerald-500">Data Analytics</a></li>
                             </ul>
                         </div>
 
@@ -89,8 +89,8 @@ const Footer = () => {
                         <div>
                             <h3 className="text-lg font-semibold mb-4">Resources</h3>
                             <ul>
-                                <li className="mb-2"><a href="/blogs" className="hover:text-pink-600">Blogs</a></li>
-                                <li className="mb-2"><a href="/articles" className="hover:text-pink-600">Articles</a></li>
+                                <li className="mb-2"><a href="/blogs" className="hover:text-emerald-500">Blogs</a></li>
+                                <li className="mb-2"><a href="/articles" className="hover:text-emerald-500">Articles</a></li>
                             </ul>
                         </div>
 
@@ -101,19 +101,19 @@ const Footer = () => {
 
                         {/* */}
                         <div className="flex space-x-4 mt-4 md:mt-0">
-                            <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-600" aria-label="Facebook">
+                            <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-emerald-500" aria-label="Facebook">
                                 <Facebook size={20} />
                             </a>
-                            <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-600" aria-label="Twitter">
+                            <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-emerald-500" aria-label="Twitter">
                                 <Twitter size={20} />
                             </a>
-                            <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-600" aria-label="LinkedIn">
+                            <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-emerald-500" aria-label="LinkedIn">
                                 <Linkedin size={20} />
                             </a>
-                            <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-600" aria-label="Instagram">
+                            <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-emerald-500" aria-label="Instagram">
                                 <Instagram size={20} />
                             </a>
-                            <a href={socialLinks.googleMaps} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-600" aria-label="Google Maps">
+                            <a href={socialLinks.googleMaps} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-emerald-500" aria-label="Google Maps">
                                 <MapPin size={20} />
                             </a>
                         </div>

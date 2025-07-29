@@ -26,7 +26,7 @@ const PlacementBenefits = () => {
             description: "Learn from professionals currently working in top-tier companies"
         },
         {
-            icon: <Lightbulb className="w-8 h-8 text-pink-400" />,
+            icon: <Lightbulb className="w-8 h-8 text-emerald-400" />,
             title: "Portfolio development",
             description: "Build impressive projects that showcase your abilities to potential employers"
         },
@@ -53,7 +53,7 @@ const PlacementBenefits = () => {
                 <div className="max-w-7xl mx-auto">
                     {/* Header */}
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-20 mt-20">
-                        Job Bootcamp <span className='text-[#C63687]'>Benefits</span>
+                        Job Bootcamp <span className='text-emerald-500'>Benefits</span>
                     </h2>
 
                     {/* Grid Layout */}
@@ -61,7 +61,7 @@ const PlacementBenefits = () => {
                         {benefits.map((benefit, index) => (
                             <div
                                 key={index}
-                                className="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-[#C63687] transition-all duration-300 hover:transform hover:scale-105"
+                                className="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-emerald-500 transition-all duration-300 hover:transform hover:scale-105"
                             >
                                 <div className="mb-6">
                                     {benefit.icon}

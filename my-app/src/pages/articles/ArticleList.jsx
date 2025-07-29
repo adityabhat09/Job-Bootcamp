@@ -28,13 +28,13 @@ export default function ArticleList() {
           {articles.map(article => (
             <Link to={`/articles/${article.slug}`} key={article._id} className="block group">
               <div className="bg-white p-8 rounded-2xl shadow-lg group-hover:shadow-2xl group-hover:-translate-y-2 transform transition-all duration-300 h-full flex flex-col">
-                <h2 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-pink-600 transition-colors duration-300">
+                <h2 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-emerald-600 transition-colors duration-300">
                   {article.title}
                 </h2>
                 <p className="text-gray-600 leading-relaxed flex-grow">
                   {article.content.slice(0, 120)}...
                 </p>
-                <span className="text-pink-500 font-semibold mt-4 inline-block">
+                <span className="text-emerald-600 font-semibold mt-4 inline-block">
                   Read More →
                 </span>
               </div>

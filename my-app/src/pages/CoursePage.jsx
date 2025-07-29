@@ -117,7 +117,7 @@ const CoursePage = ({ onOpen }) => {
                 {/* --- REVISED HERO SECTION --- */}
                 <DottedBackground className="py-12 md:py-16 lg:py-20 text-center bg-gray-900 mb-20">
                     <div className="max-w-4xl mx-auto px-4">
-                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-pink-600 leading-tight">
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-emerald-500 leading-tight">
                             {course.name}
                         </h1>
 
@@ -137,7 +137,7 @@ const CoursePage = ({ onOpen }) => {
 
                         {/* Action Buttons */}
                         <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
-                            <button className="bg-pink-600 text-white font-semibold px-8 py-3 rounded-lg hover:bg-pink-700 transition-colors w-full sm:w-auto">
+                            <button className="bg-emerald-500 text-white font-semibold px-8 py-3 rounded-lg hover:bg-emerald-700 transition-colors w-full sm:w-auto">
                                 Register Now
                             </button>
 
@@ -172,7 +172,7 @@ const CoursePage = ({ onOpen }) => {
                     <div className="max-w-full mx-10 px-2 sm:px-6 lg:px-8">
                         <div className="text-left mb-12">
                             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 ">
-                                Course <span className="text-[#C63687]">Curriculum</span>
+                                Course <span className="text-emerald-700">Curriculum</span>
                             </h2>
                             <p className="text-base sm:text-lg text-gray-600 max-w-3xl">
                                 A comprehensive curriculum designed to make you a professional developer
@@ -196,15 +196,15 @@ const CoursePage = ({ onOpen }) => {
                                             className="w-full px-6 py-4 flex items-center justify-between bg-white hover:bg-gray-50 transition-colors"
                                         >
                                             <h3 className="text-lg font-semibold text-gray-900 text-left">
-                                                <span className="text-[#C63687]">
+                                                <span className="text-emerald-700">
                                                     {(idx + 1).toString().padStart(2, '0')}.
                                                 </span>{' '}
                                                 {mod.title}
                                             </h3>
                                             {expandedModules[idx] ? (
-                                                <Minus className="w-5 h-5 text-[#C63687]" />
+                                                <Minus className="w-5 h-5 text-emerald-700" />
                                             ) : (
-                                                <Plus className="w-5 h-5 text-[#C63687]" />
+                                                <Plus className="w-5 h-5 text-emerald-700" />
                                             )}
                                         </button>
 
@@ -216,7 +216,7 @@ const CoursePage = ({ onOpen }) => {
                                                             key={i}
                                                             className="flex items-center text-gray-700"
                                                         >
-                                                            <span className="w-2 h-2 bg-[#C63687] rounded-full mr-3 flex-shrink-0"></span>
+                                                            <span className="w-2 h-2 bg-emerald-700 rounded-full mr-3 flex-shrink-0"></span>
                                                             <span>{topic}</span>
                                                         </li>
                                                     ))}
@@ -238,7 +238,7 @@ const CoursePage = ({ onOpen }) => {
                     <div className='py-10'></div>
                     <div className="max-w-full mx-10 px-2 sm:px-6 lg:px-8 mt-10 mb-24 text-center">
                         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 ">
-                            <span className='text-[#C63687]'>JustAcademy</span> Students get hired in
+                            <span className='text-emerald-700'>JustAcademy</span> Students get hired in
                         </h1>
                     </div>
                 </section>

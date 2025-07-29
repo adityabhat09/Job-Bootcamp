@@ -48,7 +48,7 @@ export default function WhyChooseUs() {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Why Choose <span style={{ color: '#B51D74' }}>Justacademy</span>?
+            Why Choose <span className='text-emerald-600'>Justacademy</span>?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Join thousands of successful graduates who transformed their careers with our proven bootcamp methodology
@@ -60,12 +60,12 @@ export default function WhyChooseUs() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-pink-200"
+              className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-emerald-400"
             >
               {/* Icon */}
               <div 
-                className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6 text-white"
-                style={{ backgroundColor: '#B51D74' }}
+                className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6 text-white bg-emerald-600"
+                // style={{ backgroundColor: '#B51D74' }}
               >
                 {feature.icon}
               </div>
@@ -76,8 +76,8 @@ export default function WhyChooseUs() {
               
               {/* Highlight Badge */}
               <div 
-                className="inline-block px-4 py-2 rounded-lg text-sm font-semibold text-white"
-                style={{ backgroundColor: '#B51D74' }}
+                className="inline-block px-4 py-2 rounded-lg text-sm font-semibold text-white bg-emerald-600"
+                // style={{ backgroundColor: '#B51D74' }}
               >
                 {feature.highlight}
               </div>
@@ -98,20 +98,20 @@ export default function WhyChooseUs() {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-bold mb-2" style={{ color: '#B51D74' }}>500+</div>
+              <div className="text-4xl font-bold mb-2 text-emerald-500" >500+</div>
               <div className="text-gray-300">Hiring Partners</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold mb-2" style={{ color: '#B51D74' }}>4.9/5</div>
+              <div className="text-4xl font-bold mb-2 text-emerald-500">4.9/5</div>
               <div className="text-gray-300">Student Rating</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold mb-2" style={{ color: '#B51D74' }}>3000+</div>
+              <div className="text-4xl font-bold mb-2 text-emerald-500">3000+</div>
               <div className="text-gray-300">Learners Trained</div>
             </div>
             {/* 300+ */}
             <div className="text-center">
-              <div className="text-4xl font-bold mb-2" style={{ color: '#B51D74' }}>300+</div>
+              <div className="text-4xl font-bold mb-2 text-emerald-500" >300+</div>
               <div className="text-gray-300">Alumini Network Members</div>
             </div>
           </div>
@@ -121,8 +121,8 @@ export default function WhyChooseUs() {
         <div className="text-center mt-16">
           <p className="text-gray-600 mb-6 text-lg">Ready to transform your career?</p>
           <button 
-            className="px-8 py-4 text-white font-semibold rounded-xl text-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-            style={{ backgroundColor: '#B51D74' }}
+            className="px-8 py-4 text-white font-semibold rounded-xl text-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-emerald-600"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             Start Your Journey Today
           </button>

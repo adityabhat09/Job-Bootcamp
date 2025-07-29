@@ -23,7 +23,7 @@ import DottedBackground from './DottedBackground';
 const InfoCard = ({ icon, title, children }) => (
     <div className="flex items-start space-x-4 mt-6">
         <div className="flex-shrink-0">
-            <div className="flex items-center justify-center h-12 w-12 rounded-md bg-[#B81F77] text-white">
+            <div className="flex items-center justify-center h-12 w-12 rounded-md bg-emerald-500 text-white">
                 {icon}
             </div>
         </div>
@@ -40,7 +40,7 @@ const SocialLink = ({ href, icon }) => (
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-gray-400 hover:text-[#B81F77] transition-colors duration-300"
+        className="text-gray-400 hover:text-emerald-500 transition-colors duration-300"
     >
         {icon}
     </a>
@@ -134,7 +134,7 @@ const ContactUs = () => {
         <DottedBackground className="bg-gray-900 text-white py-16 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl font-extrabold lg:text-5xl pt-5" style={{ color: '#B81F77' }}>
+                    <h2 className="text-3xl font-extrabold lg:text-5xl pt-5 text-emerald-500" >
                         Get in Touch
                     </h2>
                     <p className="mt-4 text-lg text-gray-400">
@@ -160,7 +160,7 @@ const ContactUs = () => {
                                         id="name"
                                         value={formData.name}
                                         onChange={handleChange}
-                                        className={`block w-full rounded-md border-2 bg-gray-800 py-3 px-4 pl-10 text-white focus:outline-none focus:ring-2 focus:ring-[#B81F77] focus:border-[#B81F77] transition ${getBorderColor('name')}`}
+                                        className={`block w-full rounded-md border-2 bg-gray-800 py-3 px-4 pl-10 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition ${getBorderColor('name')}`}
                                         placeholder="John Doe"
                                     />
                                 </div>
@@ -180,7 +180,7 @@ const ContactUs = () => {
                                         id="email"
                                         value={formData.email}
                                         onChange={handleChange}
-                                        className={`block w-full rounded-md border-2 bg-gray-800 py-3 px-4 pl-10 text-white focus:outline-none focus:ring-2 focus:ring-[#B81F77] focus:border-[#B81F77] transition ${getBorderColor('email')}`}
+                                        className={`block w-full rounded-md border-2 bg-gray-800 py-3 px-4 pl-10 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition ${getBorderColor('email')}`}
                                         placeholder="you@example.com"
                                     />
                                 </div>
@@ -200,7 +200,7 @@ const ContactUs = () => {
                                         id="phone"
                                         value={formData.phone}
                                         onChange={handleChange}
-                                        className={`block w-full rounded-md border-2 bg-gray-800 py-3 px-4 pl-10 text-white focus:outline-none focus:ring-2 focus:ring-[#B81F77] focus:border-[#B81F77] transition ${getBorderColor('phone')}`}
+                                        className={`block w-full rounded-md border-2 bg-gray-800 py-3 px-4 pl-10 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition ${getBorderColor('phone')}`}
                                         placeholder="1234567890"
                                     />
                                 </div>
@@ -220,7 +220,7 @@ const ContactUs = () => {
                                         rows="4"
                                         value={formData.message}
                                         onChange={handleChange}
-                                        className={`block w-full rounded-md border-2 bg-gray-800 py-3 px-4 pl-10 text-white focus:outline-none focus:ring-2 focus:ring-[#B81F77] focus:border-[#B81F77] transition ${getBorderColor('message')}`}
+                                        className={`block w-full rounded-md border-2 bg-gray-800 py-3 px-4 pl-10 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition ${getBorderColor('message')}`}
                                         placeholder="Your inquiry about the courses..."
                                     ></textarea>
                                 </div>
@@ -232,7 +232,7 @@ const ContactUs = () => {
                                 <button
                                     type="submit"
                                     disabled={status === 'sending'}
-                                    className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-transparent bg-[#B81F77] px-8 py-3 text-base font-semibold text-white shadow-md hover:bg-[#9F1A65] focus:outline-none focus:ring-2 focus:ring-[#B81F77] focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-300 transform hover:scale-105 disabled:bg-gray-500 disabled:cursor-not-allowed"
+                                    className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-transparent bg-emerald-500 px-8 py-3 text-base font-semibold text-white shadow-md hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-300 transform hover:scale-105 disabled:bg-gray-500 disabled:cursor-not-allowed"
                                 >
                                     {status === 'sending' ? (
                                         <>
@@ -277,15 +277,15 @@ const ContactUs = () => {
                         </InfoCard>
 
                         <InfoCard icon={<PhoneCall size={24} />} title="Call Us">
-                            <a href="tel:+919987184296" className="hover:text-[#B81F77] transition-colors">+91-9987184296</a>
+                            <a href="tel:+919987184296" className="hover:text-emerald-500 transition-colors">+91-9987184296</a>
                         </InfoCard>
 
                         <InfoCard icon={<MessageCircle size={24} />} title="Whatsapp Us">
-                            <a href="https://wa.me/919987184296" target="_blank" rel="noopener noreferrer" className="hover:text-[#B81F77] transition-colors">+91-9987184296</a>
+                            <a href="https://wa.me/919987184296" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-500 transition-colors">+91-9987184296</a>
                         </InfoCard>
 
                         <InfoCard icon={<Mail size={24} />} title="Mail Us">
-                            <a href="mailto:info@justacademy.co" className="hover:text-[#B81F77] transition-colors">info@justacademy.co</a>
+                            <a href="mailto:info@justacademy.co" className="hover:text-emerald-500 transition-colors">info@justacademy.co</a>
                         </InfoCard>
 
                         <div className="mt-8 pt-6 border-t border-gray-700">

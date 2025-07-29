@@ -25,7 +25,7 @@ const PlacementBenefits2 = () => {
             description: "Master communication and salary negotiation skills."
         },
         {
-            icon: <Users className="w-8 h-8 text-pink-400" />,
+            icon: <Users className="w-8 h-8 text-emerald-400" />,
             title: "Interview preparation",
             description: "Mock interviews and expert sessions."
         }
@@ -37,7 +37,7 @@ const PlacementBenefits2 = () => {
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-20 mt-10">
-                    Benefits beyond <span className='text-[#C63687]'>learning</span>
+                    Benefits beyond <span className='text-emerald-500'>learning</span>
                 </h2>
 
                 {/* Grid Layout */}
@@ -45,7 +45,7 @@ const PlacementBenefits2 = () => {
                     {benefits.map((benefit, index) => (
                         <div
                             key={index}
-                            className={`bg-gray-800 rounded-2xl p-6 border border-gray-700 hover:border-[#C63687] transition-all duration-300 hover:transform hover:scale-105 justify-items-center ${benefits.length === 5 && (index === 3 || index === 4) ? 'lg:col-span-3' : 'lg:col-span-2'
+                            className={`bg-gray-800 rounded-2xl p-6 border border-gray-700 hover:border-emerald-500 transition-all duration-300 hover:transform hover:scale-105 justify-items-center ${benefits.length === 5 && (index === 3 || index === 4) ? 'lg:col-span-3' : 'lg:col-span-2'
                                 }`}
                         >
 

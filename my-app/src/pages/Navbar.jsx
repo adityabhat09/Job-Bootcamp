@@ -69,12 +69,12 @@ const Navbar = () => {
         onClose={() => setModalOpen(false)}
       />
 
-      <nav className="bg-white shadow-lg fixed top-0 left-0 w-full z-50 border-b-2 border-[#B81F77]">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <nav className="bg-white shadow-lg fixed top-0 left-0 w-full z-50 border-b-2 border-emerald-500">
+        <div className="container mx-auto px-4 py-6 flex items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0 pl-4 lg:pl-10"> {/* ✅ Changed md: to lg: */}
             <Link to="/" onClick={closeAllMenus}>
-              <img src={logo} alt="JustAcademy Logo" className="h-12 w-auto" />
+              <img src={logo} alt="JustAcademy Logo" className="h-10 w-auto" />
             </Link>
           </div>
 
@@ -84,14 +84,14 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center space-x-8"> {/* ✅ Changed md: to lg: */}
             <ul className="flex items-center space-x-10 text-gray-700 font-semibold text-lg">
               <li>
-                <Link to="/" className="hover:text-[#B51D74] transition-colors duration-300">
+                <Link to="/" className="hover:text-emerald-700 transition-colors duration-300">
                   Home
                 </Link>
               </li>
               <li className="relative dropdown-container">
                 <button
                   onClick={() => setDropdownOpen(!dropdownOpen)}
-                  className="hover:text-[#B51D74] transition-colors duration-300 focus:outline-none flex items-center gap-1"
+                  className="hover:text-emerald-900 transition-colors duration-300 focus:outline-none flex items-center gap-1"
                 >
                   Job Bootcamps
                   <ChevronDown className={`w-5 h-5 mt-0.5 transition-transform duration-300 ${dropdownOpen ? 'rotate-180' : ''}`} />
@@ -106,7 +106,7 @@ const Navbar = () => {
                           <Link
                             to={`/courses/${course.slug}`}
                             onClick={() => setDropdownOpen(false)}
-                            className="block w-full text-left px-4 py-2 hover:bg-gray-100 hover:text-[#B51D74] transition-colors duration-200"
+                            className="block w-full text-left px-4 py-2 hover:bg-gray-100 hover:text-emerald-500 transition-colors duration-200"
                           >
                             {course.name}
                           </Link>
@@ -119,12 +119,12 @@ const Navbar = () => {
                 )}
               </li>
               <li>
-                <Link to="/blogs" className="hover:text-[#B51D74] transition-colors duration-300">
+                <Link to="/blogs" className="hover:text-emerald-700 transition-colors duration-300">
                   Blogs
                 </Link>
               </li>
               <li>
-                <Link to="/articles" className="hover:text-[#B51D74] transition-colors duration-300">
+                <Link to="/articles" className="hover:text-emerald-700 transition-colors duration-300">
                   Articles
                 </Link>
               </li>
@@ -133,14 +133,14 @@ const Navbar = () => {
               <Link
                 to="#"
                 onClick={handleBookWebinarClick}
-                className="px-5 py-2 border border-[#B81F77] text-[#B81F77] rounded-full font-semibold hover:bg-[#B81F77] hover:text-white transition-all duration-300 transform hover:scale-105 hover:shadow-md"
+                className="px-5 py-2 border border-emerald-500 text-emerald-900 rounded-full font-semibold hover:bg-[#045f34] hover:text-white transition-all duration-300 transform hover:scale-105 hover:shadow-md"
               >
                 Book a Free Webinar
               </Link>
               <Link
                 to="#"
                 onClick={handleBookWebinarClick}
-                className="px-5 py-2 bg-[#B81F77] text-white rounded-full font-semibold hover:bg-[#9F1A65] transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
+                className="px-5 py-2 bg-emerald-600 text-white rounded-full font-semibold hover:bg-[#045f34] transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
               >
                 Register Now
               </Link>
@@ -153,7 +153,7 @@ const Navbar = () => {
           <div className="lg:hidden flex items-center pr-4"> {/* ✅ Changed md: to lg: */}
             <button
               onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gray-700 hover:text-[#B51D74] focus:outline-none"
+              className="text-gray-700 hover:text-emerald-600 focus:outline-none"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -172,14 +172,14 @@ const Navbar = () => {
           <div className="py-4 px-6">
             <ul className="flex flex-col space-y-4 text-gray-700 font-semibold text-lg">
               <li>
-                <Link to="/" onClick={closeAllMenus} className="block py-2 hover:text-[#B51D74]">
+                <Link to="/" onClick={closeAllMenus} className="block py-2 hover:text-emerald-700">
                   Home
                 </Link>
               </li>
               <li className="dropdown-container">
                 <button
                   onClick={() => setDropdownOpen(!dropdownOpen)}
-                  className="w-full flex justify-between items-center py-2 hover:text-[#B51D74]"
+                  className="w-full flex justify-between items-center py-2 hover:text-emerald-600"
                 >
                   <span>Job Bootcamps</span>
                   <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${dropdownOpen ? 'rotate-180' : ''}`} />
@@ -194,7 +194,7 @@ const Navbar = () => {
                           <Link
                             to={`/courses/${course.slug}`}
                             onClick={closeAllMenus}
-                            className="block w-full text-left py-2 hover:bg-gray-100 hover:text-[#B51D74]"
+                            className="block w-full text-left py-2 hover:bg-gray-100 hover:text-emerald-600"
                           >
                             {course.name}
                           </Link>
@@ -207,12 +207,12 @@ const Navbar = () => {
                 )}
               </li>
               <li>
-                <Link to="/blogs" onClick={closeAllMenus} className="block py-2 hover:text-[#B51D74]">
+                <Link to="/blogs" onClick={closeAllMenus} className="block py-2 hover:text-emerald-700">
                   Blogs
                 </Link>
               </li>
               <li>
-                <Link to="/articles" onClick={closeAllMenus} className="block py-2 hover:text-[#B51D74]">
+                <Link to="/articles" onClick={closeAllMenus} className="block py-2 hover:text-emerald-700">
                   Articles
                 </Link>
               </li>
@@ -221,14 +221,14 @@ const Navbar = () => {
               <Link
                 to="#"
                 onClick={handleBookWebinarClick}
-                className="w-full text-center px-5 py-2 border border-[#B81F77] text-[#B81F77] rounded-full font-semibold hover:bg-[#B81F77] hover:text-white transition-all"
+                className="w-full text-center px-5 py-2 border border-emerald-600 text-emerald-600 rounded-full font-semibold hover:bg-[#045f34] hover:text-white transition-all"
               >
                 Book a Free Webinar
               </Link>
               <Link
                 to="#"
                 onClick={handleBookWebinarClick}
-                className="w-full text-center px-5 py-2 bg-[#B81F77] text-white rounded-full font-semibold hover:bg-[#9F1A65] transition-all"
+                className="w-full text-center px-5 py-2 bg-emerald-600 text-white rounded-full font-semibold hover:bg-[#045f34] transition-all"
               >
                 Register Now
               </Link>

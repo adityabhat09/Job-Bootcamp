@@ -69,7 +69,7 @@ export default function BookWebinarModal({ isOpen, onClose }) {
                 <form ref={form} onSubmit={sendEmail} className="space-y-5">
                     {/* Name */}
                     <div>
-                        <label className="block text-base font-medium text-[#C63687] mb-2">
+                        <label className="block text-base font-medium text-emerald-600 mb-2">
                             Full Name
                         </label>
                         <input
@@ -85,7 +85,7 @@ export default function BookWebinarModal({ isOpen, onClose }) {
 
                     {/* Phone Number */}
                     <div>
-                        <label className="block text-base font-medium text-[#C63687] mb-2">
+                        <label className="block text-base font-medium text-emerald-600 mb-2">
                             Phone Number
                         </label>
                         <input
@@ -101,7 +101,7 @@ export default function BookWebinarModal({ isOpen, onClose }) {
 
                     {/* Email */}
                     <div>
-                        <label className="block text-base font-medium text-[#C63687] mb-2">
+                        <label className="block text-base font-medium text-emerald-600 mb-2">
                             Email Address
                         </label>
                         <input
@@ -126,7 +126,7 @@ export default function BookWebinarModal({ isOpen, onClose }) {
                     <button
                         type="submit"
                         disabled={isSending}
-                        className="w-full bg-pink-600 hover:bg-pink-800 text-white font-semibold py-4 rounded-lg text-lg transition-colors disabled:bg-gray-400"
+                        className="w-full bg-emerald-600 hover:bg-emerald-800 text-white font-semibold py-4 rounded-lg text-lg transition-colors disabled:bg-gray-400"
                     >
                         {isSending ? 'Booking...' : 'Confirm Booking'}
                     </button>
